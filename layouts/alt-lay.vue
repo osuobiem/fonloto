@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <AppHeader />
+
+    <nuxt />
+
+    <MobileNav />
+
+    <VueInjectJs src="js/jquery.js" />
+    <VueInjectJs src="js/popper.min.js" />
+    <VueInjectJs src="js/bootstrap.min.js" />
+    <VueInjectJs src="js/jquery-modal-video.min.js" />
+    <VueInjectJs src="js/jquery.filterizr.min.js" />
+    <VueInjectJs src="js/waypoints.min.js" />
+    <VueInjectJs src="js/waypoints.min.js" />
+    <VueInjectJs src="js/wow.min.js" />
+    <VueInjectJs src="js/scrolling-animation.js" />
+    <VueInjectJs src="js/jquery.nicescroll.min.js" />
+    <VueInjectJs src="js/slick.js" />
+    <VueInjectJs src="js/slick-slider.js" />
+    <VueInjectJs src="js/main.js" />
+  </div>
+</template>
+
+<script>
+import VueInjectJs from 'vue-inject-js'
+
+import AppHeader from '@/components/Bright-Header'
+import MobileNav from '@/components/Mobile-Nav'
+
+export default {
+  components: {
+    AppHeader,
+    VueInjectJs,
+    MobileNav
+  }
+}
+</script>
+
+<style>
+@import url('~/assets/css/style.css');
+@import url('~/assets/css/bootstrap.min.css');
+@import url('~/assets/css/animate.css');
+@import url('~/assets/css/responsive.css');
+@import url('~/assets/css/jquery-jvectormap-2.0.3.css');
+@import url('~/assets/css/simple-scrollbar.css');
+</style>

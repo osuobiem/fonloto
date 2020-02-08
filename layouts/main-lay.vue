@@ -8,6 +8,7 @@
     <VueInjectJs src="js/jquery.js" />
     <VueInjectJs src="js/popper.min.js" />
     <VueInjectJs src="js/bootstrap.min.js" />
+    <VueInjectJs src="js/jquery-modal-video.min.js" />
     <VueInjectJs src="js/jquery.filterizr.min.js" />
     <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/waypoints.min.js" />

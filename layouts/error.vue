@@ -1,35 +1,53 @@
 <template>
   <div>
-    <!-- 404 Area Start -->
-    <section class="four-zero-four">
-      <img class="bg-img" src="~/assets/images/404-bg.png" alt="" />
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="content">
-              <img src="~/assets/images/404.png" alt="" />
-              <div class="inner-content">
-                <h4 class="title">
-                  Oops, Something went wrong !
-                </h4>
-                <nuxt-link to="/" class="mybtn1"
-                  ><i class="fas fa-angle-double-left"></i> BACK TO
-                  HOME</nuxt-link
-                >
-              </div>
+    <div class="breadcrumb-lotters">
+      <div class="banner-shape">
+        <img src="~/assets/img/svg/banner-shape-1.png" alt="" />
+        <img src="~/assets/img/svg/banner-shape-2.png" alt="" />
+      </div>
+      <div class="container" style="margin-top: 15px">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-6">
+            <div class="breadcrumb-content">
+              <h2>
+                404 <br />
+                Page not found
+              </h2>
+              <ul>
+                <li>
+                  <a href="/"
+                    ><i class="fa fa-arrow-circle-left"></i> Go back Home</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- 404 Area End -->
+    </div>
+    <!-- breadcrumb end -->
+
+    <!-- error begin -->
+    <div class="error">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-8">
+            <div class="part-img">
+              <img src="~/assets/img/error.png" alt="" />
+            </div>
+            <div class="part-text">
+              <h2>Oops! Seems you're lost</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- error end -->
   </div>
 </template>
 
-<style>
-@import url('~/assets/css/style.css');
-@import url('~/assets/css/bootstrap.min.css');
-/* @import url('~/assets/css/plugin.css'); */
-@import url('~/assets/css/style.css');
-@import url('~/assets/css/responsive.css');
-</style>
+<script>
+export default {
+  layout: 'alt-lay'
+}
+</script>
