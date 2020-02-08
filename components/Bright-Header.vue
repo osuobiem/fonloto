@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- header begin -->
-    <div class="header">
+    <div class="header style-2">
       <div class="container">
         <div class="menu-bar" style="margin-top: 15px">
           <div class="row">
