@@ -1,0 +1,12 @@
+$('.Vertical-Slider').slick({ 
+    autoplay:true,
+    autoplaySpeed:5000,
+    speed:800,
+    slidesToShow:3,
+    slidesToScroll:1,
+    pauseOnHover:false,
+    arrows:false,
+    cssEase:'linear',
+    vertical:true,
+    verticalSwiping:true,
+});
