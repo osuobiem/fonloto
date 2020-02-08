@@ -4,6 +4,7 @@
 
     <nuxt />
 
+    <Copyright />
     <MobileNav />
 
     <VueInjectJs src="js/jquery.js" />
@@ -13,7 +14,6 @@
     <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/wow.min.js" />
-    <VueInjectJs src="js/scrolling-animation.js" />
     <VueInjectJs src="js/jquery.nicescroll.min.js" />
     <VueInjectJs src="js/owl.carousel.min.js" />
     <VueInjectJs src="js/main.js" />
@@ -25,12 +25,14 @@ import VueInjectJs from 'vue-inject-js'
 
 import AppHeader from '@/components/Bright-Header'
 import MobileNav from '@/components/Mobile-Nav'
+import Copyright from '@/components/Copyright'
 
 export default {
   components: {
     AppHeader,
     VueInjectJs,
-    MobileNav
+    MobileNav,
+    Copyright
   }
 }
 </script>

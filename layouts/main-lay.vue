@@ -3,8 +3,9 @@
     <Preloader />
     <AppHeader />
     <nuxt />
-    <MobileNav />
+
     <Copyright />
+    <MobileNav />
 
     <VueInjectJs src="js/jquery.js" />
     <VueInjectJs src="js/popper.min.js" />
@@ -13,7 +14,6 @@
     <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/wow.min.js" />
-    <VueInjectJs src="js/scrolling-animation.js" />
     <VueInjectJs src="js/jquery.nicescroll.min.js" />
     <VueInjectJs src="js/owl.carousel.min.js" />
     <VueInjectJs src="js/main.js" />
