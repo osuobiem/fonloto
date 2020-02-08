@@ -4,6 +4,7 @@
     <AppHeader />
     <nuxt />
     <MobileNav />
+    <Copyright />
 
     <VueInjectJs src="js/jquery.js" />
     <VueInjectJs src="js/popper.min.js" />
@@ -27,13 +28,15 @@ import VueInjectJs from 'vue-inject-js'
 import AppHeader from '@/components/Header'
 import Preloader from '@/components/Preloader'
 import MobileNav from '@/components/Mobile-Nav'
+import Copyright from '@/components/Copyright'
 
 export default {
   components: {
     AppHeader,
     Preloader,
     VueInjectJs,
-    MobileNav
+    MobileNav,
+    Copyright
   }
 }
 </script>
