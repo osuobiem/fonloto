@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-8 col-lg-8">
-            <p>Copyright © {{ yYear }}; All Right Reserved</p>
+            <p>Copyright © {{ year }}; All Right Reserved</p>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@ export default {
   computed: {
     year: () => {
       let now = new Date()
-      return now.getFullYear
+      return now.getFullYear()
     }
   }
 }
