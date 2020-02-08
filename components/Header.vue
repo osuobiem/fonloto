@@ -1,224 +1,284 @@
 <template>
   <div>
     
-    <!-- Header Area Start  -->
-	<header class="header">
-		<!-- Top Header Area Start -->
-		<section class="top-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="content">
-							<div class="left-content">
-								<ul class="left-list">
-									<li>
-										<p>
-											<i class="fas fa-headset"></i>	Support
-										</p>
-									</li>
-									<li>
-										<p>
-											<i class="fas fa-envelope"></i>	info@Dooplo.com
-										</p>
-									</li>
-									<li>
-										<div class="language-selector">
-											<select name="language" class="language">
-												<option value="1">English</option>
-												<option value="2">France</option>
-												<option value="3">Japan</option>
-											</select>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="right-content">
-								
-									<ul class="right-list">
-											<li>
-												<div class="cart-icon tm-dropdown">
-													<i class="fas fa-cart-arrow-down"></i>
-													<span class="cart-count">10</span>
-													<div class="tm-dropdown-menu">
-														<ul class="list">
-															<li class="list-item">
-																	<div class="close">
-																			<i class="fas fa-times"></i>
-																	</div>
-																<ul class="number-list">
-																	<li>24</li>
-																	<li>25</li>
-																	<li>26</li>
-																	<li>27</li>
-																	<li>28</li>
-																</ul>
-															</li>
-															<li class="list-item">
-																	<div class="close">
-																			<i class="fas fa-times"></i>
-																	</div>
-																<ul class="number-list">
-																	<li>24</li>
-																	<li>25</li>
-																	<li>26</li>
-																	<li>27</li>
-																	<li>28</li>
-																</ul>
-															</li>
-															<li class="list-item">
-																	<div class="close">
-																			<i class="fas fa-times"></i>
-																	</div>
-																<ul class="number-list">
-																	<li>24</li>
-																	<li>25</li>
-																	<li>26</li>
-																	<li>27</li>
-																	<li>28</li>
-																</ul>
-															</li>
-															<li class="list-item">
-																<div class="close">
-																		<i class="fas fa-times"></i>
-																</div>
-																<ul class="number-list">
-																	<li>24</li>
-																	<li>25</li>
-																	<li>26</li>
-																	<li>27</li>
-																	<li>28</li>
-																</ul>
-															</li>
-														</ul>
-														<a href="cart.html" class="link-btn">Cart Page</a>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="notofication tm-dropdown">
-													<i class="fas fa-bell"></i>
-													<span class="count">11</span>
-													<div class="tm-dropdown-menu">
-															<ul class="list">
-																<li>
-																	<a href="#">
-																		<i class="fas fa-bell"></i>
-																		Invest Exchange
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fas fa-bell"></i>
-																		Invest Exchange
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fas fa-bell"></i>
-																		Invest Exchange
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fas fa-bell"></i>
-																		Invest Exchange
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fas fa-bell"></i>
-																		Invest Exchange
-																	</a>
-																</li>
-															</ul>
-														</div>
-												</div>
-											</li>
-											<li>
-												<a href="#" class="sign-in" data-toggle="modal" data-target="#login">
-													<i class="fas fa-user"></i> Sign In
-												</a>
-											</li>
-										</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Top Header Area End -->
-		<!--Main-Menu Area Start-->
-		<div class="mainmenu-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">                 
-						<nav class="navbar navbar-expand-lg navbar-light">
-							<nuxt-link class="navbar-brand" to="/" style="max-width: 20%">
-								<img src="~/assets/images/logo.png" style="max-width: 65%" alt="">
-							</nuxt-link>
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu"
-								aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-							<div class="collapse navbar-collapse fixed-height" id="main_menu">
-								<ul class="navbar-nav ml-auto">
-									<li class="nav-item dropdown">
-										<a class="nav-link active dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">
-											Home
-										<div class="mr-hover-effect"></div>
-										</a>
-										<ul class="dropdown-menu" >
-											<li><a class="dropdown-item" href="index.html"> <i class="fa fa-angle-double-right"></i>Home 1</a></li>
-											<li><a class="dropdown-item" href="index2.html"> <i class="fa fa-angle-double-right"></i> Home 2</a></li>
-										</ul>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="play.html">Play
-												<div class="mr-hover-effect"></div></a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="lottery.html">lottery
-												<div class="mr-hover-effect"></div></a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="tournaments.html">tournaments
-												<div class="mr-hover-effect"></div></a>
-									</li>
-									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">
-											Pages
-											<div class="mr-hover-effect"></div>
-										</a>
-										<ul class="dropdown-menu" >
-											<li><a class="dropdown-item" href="about.html"> <i class="fa fa-angle-double-right"></i>About</a></li>
-											<li><a class="dropdown-item" href="affiliate.html"> <i class="fa fa-angle-double-right"></i>Affiliate</a></li>
-											<li><a class="dropdown-item" href="awards.html"> <i class="fa fa-angle-double-right"></i>Awards</a></li>
-											<li><a class="dropdown-item" href="bonus.html"> <i class="fa fa-angle-double-right"></i>Bonus</a></li>
-											<li><a class="dropdown-item" href="cart.html"> <i class="fa fa-angle-double-right"></i>Cart</a></li>
-											<li><a class="dropdown-item" href="faq.html"> <i class="fa fa-angle-double-right"></i>Faq</a></li>
-											<li><a class="dropdown-item" href="how-it-work.html"> <i class="fa fa-angle-double-right"></i>How It Work</a></li>
-											<li><a class="dropdown-item" href="terms-conditions.html"> <i class="fa fa-angle-double-right"></i>Terms & Condition</a></li>
-											<li><a class="dropdown-item" href="terms-conditions-details.html"> <i class="fa fa-angle-double-right"></i>Condition Details</a></li>
-											<li><a class="dropdown-item" href="404.html"> <i class="fa fa-angle-double-right"></i>404</a></li>
-										</ul>
-									</li>
-									<li class="nav-item">
-											<a class="nav-link" href="contact.html">Contact
-													<div class="mr-hover-effect"></div></a>
-										</li>
-								</ul>
-								<a href="#" class="mybtn1"  data-toggle="modal" data-target="#signin"> Join us</a>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--Main-Menu Area Start-->
-	</header>
-	<!-- Header Area End  -->
+   <!-- header begin -->
+        <div class="header">
+            <div class="container">
+                <div class="menu-bar">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-block align-items-center">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-7">
+                                    <div class="logo">
+                                        <nuxt-link to="/">
+                                            <img src="~/assets/img/logo.png" alt="">
+                                        </nuxt-link>
+                                    </div>
+                                </div>
+                                <div class="d-xl-none d-lg-none d-block col-5">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 for-lottery">
+                            <div class="mainmenu">
+                                <nav class="navbar navbar-expand-lg for-lottery">
+
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#" id="homepage" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Home
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown for-lottery-btn">
+                                                <a class="nav-link dropdown-toggle" href="#" id="all-lotteries" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    In-Play
+                                                </a>
+                                                <div class="dropdown-menu for-specific">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                                <div class="all-lotteries d-xl-block d-lg-block d-none">
+                                                    <div class="single-lottery">
+                                                        
+                                                        <h3 class="title">EuroMillions</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/euro-million.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-lottery">
+                                                        
+                                                        <h3 class="title">EuroJackpot</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/euro-jackpot.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-lottery">
+                                                    
+                                                        <h3 class="title">Powerball</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/powerball.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-lottery">
+                                                        <h3 class="title">UK Lottery</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/uk-lottery.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-lottery">
+                                                        
+                                                        <h3 class="title">MegaMillions</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/mega.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-lottery">
+                                                    
+                                                        <h3 class="title">EnaLotto</h3>
+                                                        <div class="part-icon">
+                                                            <img src="assets/img/svg/enalotto.png" alt="">
+                                                        </div>
+                                                        <a href="pick-number.html">Play Game</a>
+                                                        <div class="draw-time">
+                                                            <ul class="date-counter timer" data-date="30 November 2019 9:56:00 GMT+01:00">
+                                                                <li>
+                                                                    <span class="number day">15</span>
+                                                                    <span class="text">Day</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number hour">15</span>
+                                                                    <span class="text">Hou</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number minute">25</span>
+                                                                    <span class="text">Min</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="number second">35</span>
+                                                                    <span class="text">Sec</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lottery-result-menu">
+                                                        <a href="lottery-results.html">See The All Lottery Result</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Pages
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="pages" data-ss-container>
+                                                    <a class="dropdown-item" href="about.html">About Us</a>
+                                                    <a class="dropdown-item" href="affiliate.html">Affiliate</a>
+                                                    <a class="dropdown-item" href="all-lotteries.html">All Lotteries</a>
+                                                    <a class="dropdown-item" href="lottery-results.html">Lottery Result</a>
+                                                    <a class="dropdown-item" href="buy-ticket-online.html">Buy Ticket Online</a>
+                                                    <a class="dropdown-item" href="error.html">Error 404</a>
+                                                    <a class="dropdown-item" href="faq.html">Faq</a>
+                                                    <a class="dropdown-item" href="how-it-works.html">How It Works</a>
+                                                    <a class="dropdown-item" href="login.html">Login I</a>
+                                                    <a class="dropdown-item" href="login-2.html">Login II</a>
+                                                    <a class="dropdown-item" href="pick-number.html">Pick Number</a>
+                                                    <a class="dropdown-item" href="register.html">Register I</a>
+                                                    <a class="dropdown-item" href="register-2.html">Register II</a>
+                                                    <a class="dropdown-item" href="team.html">Team I</a>
+                                                    <a class="dropdown-item" href="team-2.html">Team II</a>
+                                                    <a class="dropdown-item" href="testimonial.html">Testimonial I</a>
+                                                    <a class="dropdown-item" href="testimonial-2.html">Testimonial II</a>
+                                                    <a class="dropdown-item" href="why-choose-us.html">Why Choose Us</a>
+                                                    <a class="dropdown-item" href="winner.html">Winner</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="blog" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Blog
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="blog">
+                                                    <a class="dropdown-item" href="blog.html">Blog Posts</a>
+                                                    <a class="dropdown-item" href="blog-details.html">Blog Details</a>
+                                                    <a class="dropdown-item" href="blog-left-sidebar.html">Blog L-Sidebar</a>
+                                                    <a class="dropdown-item" href="blog-right-sidebar.html">Blog R-Sidebar</a>
+                                                   
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dashboard" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Dashboard
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dashboard">
+                                                    <a class="dropdown-item" href="user-panel/index.html">Dashboard</a>
+                                                    <a class="dropdown-item" href="user-panel/profile.html">Profile</a>
+                                                    <a class="dropdown-item" href="user-panel/cart.html">My Cart</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="contact.html">Contact</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link sign-up" href="register.html">Sign Up</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header end -->
 
   </div>
 </template>

@@ -7,10 +7,14 @@
     <VueInjectJs src="js/jquery.js" />
     <VueInjectJs src="js/popper.min.js" />
     <VueInjectJs src="js/bootstrap.min.js" />
-    <VueInjectJs src="js/bootstrap.min.js" />
-    <VueInjectJs src="js/plugin.js" />
-    <VueInjectJs src="js/TweenMax.js" />
-    <VueInjectJs src="js/mousemoveparallax.js" />
+    <VueInjectJs src="js/jquery.filterizr.min.js" />
+    <VueInjectJs src="js/waypoints.min.js" />
+    <VueInjectJs src="js/waypoints.min.js" />
+    <VueInjectJs src="js/wow.min.js" />
+    <VueInjectJs src="js/scrolling-animation.js" />
+    <VueInjectJs src="js/jquery.nicescroll.min.js" />
+    <VueInjectJs src="js/slick.js" />
+    <VueInjectJs src="js/slick-slider.js" />
     <VueInjectJs src="js/main.js" />
   </div>
 </template>
@@ -33,7 +37,8 @@ export default {
 <style>
 @import url('~/assets/css/style.css');
 @import url('~/assets/css/bootstrap.min.css');
-/* @import url('~/assets/css/plugin.css'); */
-@import url('~/assets/css/style.css');
+@import url('~/assets/css/animate.css');
 @import url('~/assets/css/responsive.css');
+@import url('~/assets/css/jquery-jvectormap-2.0.3.css');
+@import url('~/assets/css/simple-scrollbar.css');
 </style>
