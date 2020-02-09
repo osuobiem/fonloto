@@ -2,7 +2,7 @@
   <!-- header begin -->
   <div class="header style-2">
     <div class="container">
-      <div class="menu-bar" style="margin-top: 15px">
+      <div class="menu-bar">
         <div class="row">
           <div
             class="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-block align-items-center"
@@ -11,7 +11,11 @@
               <div class="col-xl-12 col-lg-12 col-7">
                 <div class="logo">
                   <nuxt-link to="/">
-                    <img src="~/assets/img/logo.png" alt="" />
+                    <img
+                      style="max-width: 85%"
+                      src="~/assets/img/logo.png"
+                      alt=""
+                    />
                   </nuxt-link>
                 </div>
               </div>

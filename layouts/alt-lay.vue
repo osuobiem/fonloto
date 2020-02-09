@@ -4,6 +4,7 @@
 
     <nuxt />
 
+    <AppFooter />
     <Copyright />
     <MobileNav />
 
@@ -26,13 +27,15 @@ import VueInjectJs from 'vue-inject-js'
 import AppHeader from '@/components/Bright-Header'
 import MobileNav from '@/components/Mobile-Nav'
 import Copyright from '@/components/Copyright'
+import AppFooter from '@/components/Footer'
 
 export default {
   components: {
     AppHeader,
     VueInjectJs,
     MobileNav,
-    Copyright
+    Copyright,
+    AppFooter
   }
 }
 </script>

@@ -2,8 +2,10 @@
   <div>
     <Preloader />
     <AppHeader />
+
     <nuxt />
 
+    <AppFooter />
     <Copyright />
     <MobileNav />
 
@@ -27,14 +29,15 @@ import AppHeader from '@/components/Header'
 import Preloader from '@/components/Preloader'
 import MobileNav from '@/components/Mobile-Nav'
 import Copyright from '@/components/Copyright'
+import AppFooter from '@/components/Footer'
 
 export default {
   components: {
     AppHeader,
-    Preloader,
     VueInjectJs,
     MobileNav,
-    Copyright
+    Copyright,
+    AppFooter
   }
 }
 </script>
