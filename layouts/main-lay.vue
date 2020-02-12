@@ -19,6 +19,7 @@
     <VueInjectJs src="js/jquery.nicescroll.min.js" />
     <VueInjectJs src="js/owl.carousel.min.js" />
     <VueInjectJs src="js/main.js" />
+    <VueInjectJs src="js/custom/index.js" />
   </div>
 </template>
 

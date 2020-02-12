@@ -1,8 +1,8 @@
 <template>
   <!-- header begin -->
-  <div class="header">
+  <div class="header" style="margin-top: 15px">
     <div class="container">
-      <div class="menu-bar" style="margin-top: 15px">
+      <div class="menu-bar">
         <div class="row">
           <div
             class="col-xl-3 col-lg-3 d-xl-flex d-lg-flex d-block align-items-center"
