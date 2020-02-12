@@ -12,7 +12,7 @@
             <p>
               Give yourself the gift of a dream.<br />Buy a ticket today and
               stand a chance to win big.<br />
-              <strong>If not you, Who? </strong>
+              <strong>Give us the opportunity to change your life.</strong>
             </p>
             <a href="#" class="banner-button">Play Now</a>
           </div>
