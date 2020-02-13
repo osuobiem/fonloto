@@ -37,7 +37,7 @@
               </strong>
             </p>
             <strong>
-              The draw will start by 12:00 noon, 22nd of February 2020.
+              The draw will start by 12:00 noon, 22nd February 2020.
             </strong>
             <div
               class="date-counter timer"

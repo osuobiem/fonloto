@@ -56,7 +56,7 @@
                       <nuxt-link class="nav-link" to="/">F.A.Q</nuxt-link>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/">Contact</nuxt-link>
+                      <a class="nav-link" href="#contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link sign-up" href="register.html"

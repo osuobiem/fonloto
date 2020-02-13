@@ -198,15 +198,21 @@
             </div>
         </div>
         <!-- choosing reason end -->
+
+        <!-- contact us begin -->
+        <Contact />
+        <!-- contact us end -->
   </div>
 </template>
 
 <script>
 import Draw from '@/components/Draw'
+import Contact from '@/components/Contact'
 
 export default {
   components: {
-    Draw
+    Draw,
+    Contact
   },
   layout: 'main-lay'
 }
