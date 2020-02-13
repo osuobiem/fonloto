@@ -38,7 +38,8 @@ export default {
     VueInjectJs,
     MobileNav,
     Copyright,
-    AppFooter
+    AppFooter,
+    Preloader
   }
 }
 </script>
