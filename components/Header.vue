@@ -54,7 +54,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link sign-up" href="register.html"
-                        >Sign Up</a
+                        >Sign In</a
                       >
                     </li>
                   </ul>

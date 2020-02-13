@@ -1,6 +1,6 @@
 <template>
   <!-- lottery ticket begin -->
-  <div class="lottery-ticket" id="lottery-ticket">
+  <div class="lottery-ticket" id="lottery-ticket" style="padding: 70px 0px">
     <div class="container">
       <div
         class="row justify-content-xl-between justify-content-lg-between justify-content-md-center"
@@ -30,7 +30,7 @@
           <div class="part-text">
             <h2>Buy Lottery Ticket to Enter ₦100,000 Raffle Draw</h2>
             <p>
-              You're just ₦200 away from instantly winning ₦100,000 , don't miss
+              You're just ₦200 away from instantly winning ₦100,000 don't miss
               this chance.<br /><br />
               <strong>
                 The more tickets you buy, the more your chances of winning.
