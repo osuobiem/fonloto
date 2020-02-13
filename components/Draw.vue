@@ -17,8 +17,8 @@
             </div>
             <img src="~/assets/img/lottery-jackpot-img.png" alt="" />
             <div class="draw-date">
-              <span class="title">Draw</span>
-              <span class="date">26 Dec</span>
+              <span class="title">Next Draw</span>
+              <span class="date">22 Feb</span>
             </div>
             <div class="clock">
               <img src="~/assets/img/clock.webp" alt="" />
@@ -28,22 +28,20 @@
 
         <div class="col-xl-6 col-lg-7 col-md-9">
           <div class="part-text">
-            <h2>Buy lottery tickets online</h2>
+            <h2>Buy Lottery Ticket to Enter ₦100,000 Raffle Draw</h2>
             <p>
-              Lotto tickets online are a great alternative to paper tickets; you
-              don’t have to visit a local lottery office any more. You don’t
-              have to wait in line to purchase a lottery ticket online. Play a
-              lottery online using the possibilities of modern technology and
-              the expansion of the internet.
+              You're just ₦200 away from instantly winning ₦100,000 , don't miss
+              this chance.<br /><br />
+              <strong>
+                The more tickets you buy, the more your chances of winning.
+              </strong>
             </p>
-            <p>
-              Check out the lotteries available in our offer. Pay close
-              attention to the time remaining for each draw, as well as to the
-              jackpot prize amount!
-            </p>
+            <strong>
+              The draw will start by 12:00 noon, 22nd of February 2020.
+            </strong>
             <div
               class="date-counter timer"
-              data-date="30 November 2019 9:56:00 GMT+01:00"
+              data-date="22 February 2020 12:00:00 GMT+01:00"
             >
               <div class="single-counter">
                 <div class="conter-content">
@@ -73,11 +71,11 @@
             <div class="buttons">
               <ul>
                 <li>
-                  <a href="#">Register & Play</a>
+                  <a href="#">Buy ₦200 Ticket</a>
                 </li>
-                <li>
+                <!-- <li>
                   <a href="#">View All Offer</a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>

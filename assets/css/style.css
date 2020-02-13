@@ -191,7 +191,7 @@ html {
   overflow-x: hidden; }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif !important;
   font-size: 16px;
   margin: 0;
   color: #3d5169;
@@ -1763,7 +1763,7 @@ ul {
     .lottery-ticket .part-img .clock {
       position: absolute;
       bottom: 16px;
-      left: -110px; }
+      left: -123px; }
       .lottery-ticket .part-img .clock img {
         width: 115px;
         height: 115px; }

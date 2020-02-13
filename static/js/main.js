@@ -67,6 +67,7 @@
         var nodes = $('.timer');
         $.each(nodes, function (_index, value) {
             var date = $(this).data('date');
+            console.log(date);
 
             setInterval(() => {
 
