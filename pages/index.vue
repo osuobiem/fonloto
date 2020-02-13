@@ -77,8 +77,7 @@
                   <div class="section-title text-center">
                     <h2>How It Works</h2>
                     <p>
-                      Sign up/in and buy a ticket. You will know if you've won
-                      after the raffle draw.
+                      Sign up and buy a ticket. This will give you an opportunity to win big.
                     </p>
                   </div>
                 </div>
