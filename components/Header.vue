@@ -47,6 +47,12 @@
                       <nuxt-link class="nav-link" to="/">Draws</nuxt-link>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
                       <nuxt-link class="nav-link" to="/">F.A.Q</nuxt-link>
                     </li>
                     <li class="nav-item">

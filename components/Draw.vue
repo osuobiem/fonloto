@@ -73,9 +73,9 @@
                 <li>
                   <a href="#">Buy ₦200 Ticket</a>
                 </li>
-                <!-- <li>
-                  <a href="#">View All Offer</a>
-                </li> -->
+                <li>
+                  <a href="#">More Draws</a>
+                </li>
               </ul>
             </div>
           </div>
