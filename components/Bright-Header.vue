@@ -41,16 +41,24 @@
                 >
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="/">Home</a>
+                      <nuxt-link class="nav-link" to="/">Home</nuxt-link>
                     </li>
                     <li class="nav-item">
                       <nuxt-link class="nav-link" to="/">Draws</nuxt-link>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/">F.A.Q</nuxt-link>
+                      <a class="nav-link" href="/#how-it-works">How It Works</a>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/">Contact</nuxt-link>
+                      <a class="nav-link" href="/#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <nuxt-link class="nav-link" to="/faq">F.A.Q</nuxt-link>
+                    </li>
+                    <li class="nav-item">
+                      <nuxt-link class="nav-link" to="/contact-us"
+                        >Contact Us</nuxt-link
+                      >
                     </li>
                     <li class="nav-item">
                       <a class="nav-link sign-up" href="register.html"

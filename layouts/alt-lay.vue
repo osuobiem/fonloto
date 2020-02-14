@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Preloader />
     <AppHeader />
 
     <nuxt />
@@ -29,7 +28,6 @@ import AppHeader from '@/components/Bright-Header'
 import MobileNav from '@/components/Mobile-Nav'
 import Copyright from '@/components/Copyright'
 import AppFooter from '@/components/Footer'
-import Preloader from '@/components/Preloader'
 
 export default {
   components: {
@@ -37,8 +35,7 @@ export default {
     VueInjectJs,
     MobileNav,
     Copyright,
-    AppFooter,
-    Preloader
+    AppFooter
   }
 }
 </script>

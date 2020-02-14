@@ -24,7 +24,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#ff0000' },
+  loading: '~/components/Preloader.vue',
   /*
    ** Global CSS
    */
