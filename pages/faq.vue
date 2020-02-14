@@ -1,11 +1,14 @@
 <template>
   <div>
     <Banner :page="page" :detail="detail" />
+
+    <FAQ />
   </div>
 </template>
 
 <script>
 import Banner from '@/components/Banner'
+import FAQ from '@/components/FAQ'
 
 export default {
   data() {
@@ -15,7 +18,8 @@ export default {
     }
   },
   components: {
-    Banner
+    Banner,
+    FAQ
   },
   layout: 'alt-lay'
 }
