@@ -12,9 +12,6 @@
             <h2>{{ page }}</h2>
             <ul>
               <li>
-                <nuxt-link to="/">Home</nuxt-link>
-              </li>
-              <li>
                 {{ detail }}
               </li>
             </ul>
