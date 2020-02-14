@@ -53,7 +53,7 @@
                       <a class="nav-link" href="#about-us">About Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/faq">F.A.Q</a>
+                      <nuxt-link class="nav-link" to="/faq">F.A.Q</nuxt-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#contact-us">Contact Us</a>
