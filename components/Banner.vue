@@ -25,3 +25,9 @@
   </div>
   <!-- breadcrumb end -->
 </template>
+
+<script>
+export default {
+  props: ['page', 'details']
+}
+</script>
