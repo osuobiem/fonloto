@@ -28,6 +28,6 @@
 
 <script>
 export default {
-  props: ['page', 'details']
+  props: ['page', 'detail']
 }
 </script>
