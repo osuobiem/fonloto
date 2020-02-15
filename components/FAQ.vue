@@ -8,7 +8,7 @@
                     <div class="col-xl-3 col-lg-3">
                         <div class="faq-sidebar">
                             
-                          <SearchWidget />
+                          <!-- <SearchWidget /> -->
 
                             <h3 class="catrgory">Categories</h3>
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -122,11 +122,11 @@
 </template>
 
 <script>
-import SearchWidget from '@/components/SearchWidget';
+// import SearchWidget from '@/components/SearchWidget';
 
 export default {
-  components: {
-    SearchWidget
-  }
+//   components: {
+//     SearchWidget
+//   }
 }
 </script>

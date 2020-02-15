@@ -1,6 +1,6 @@
 <template>
   <!-- header begin -->
-  <div class="header" style="margin-top: 15px">
+  <div class="header" id="header" style="margin-top: 15px">
     <div class="container">
       <div class="menu-bar">
         <div class="row">

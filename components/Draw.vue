@@ -52,7 +52,7 @@
               <div class="single-counter">
                 <div class="conter-content">
                   <span class="number hour">15</span>
-                  <span class="title">Hour</span>
+                  <span class="title">Hours</span>
                 </div>
               </div>
               <div class="single-counter">

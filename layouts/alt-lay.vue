@@ -13,7 +13,6 @@
     <VueInjectJs src="js/bootstrap.min.js" />
     <VueInjectJs src="js/jquery-modal-video.min.js" />
     <VueInjectJs src="js/waypoints.min.js" />
-    <VueInjectJs src="js/waypoints.min.js" />
     <VueInjectJs src="js/wow.min.js" />
     <VueInjectJs src="js/jquery.nicescroll.min.js" />
     <VueInjectJs src="js/owl.carousel.min.js" />
