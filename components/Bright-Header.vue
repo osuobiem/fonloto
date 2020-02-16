@@ -42,7 +42,7 @@
                 >
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="/">Home</a>
+                      <nuxt-link class="nav-link" to="/">Home</nuxt-link>
                     </li>
                     <li class="nav-item">
                       <nuxt-link class="nav-link" to="/">Draws</nuxt-link>

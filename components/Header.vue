@@ -53,14 +53,14 @@
                       <a class="nav-link" href="#about-us">About Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/faq">F.A.Q</a>
+                      <nuxt-link class="nav-link" to="/faq">F.A.Q</nuxt-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link sign-up" href="/join/register"
-                        >Register</a
+                      <nuxt-link class="nav-link sign-up" to="/join/register"
+                        >Register</nuxt-link
                       >
                     </li>
                   </ul>
