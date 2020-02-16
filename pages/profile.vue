@@ -71,6 +71,6 @@
 import Banner from '@/components/Banner'
 
 export default {
-  layout: 'alt-lay'
+  layout: 'blue-lay'
 }
 </script>
