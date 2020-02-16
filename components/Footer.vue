@@ -16,23 +16,11 @@
             <div class="link-widget">
               <h3>Quick Links</h3>
               <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Draws</a>
-                </li>
-                <li>
-                  <a href="#">About us</a>
-                </li>
-                <li>
-                  <a href="#">F.A.Q</a>
-                </li>
-                <li>
-                  <a href="#">Contact us</a>
-                </li>
-                <li>
-                  <a href="#">Deposit</a>
+                <li v-for="(link, index) in links" :key="index">
+                  <nuxt-link v-if="link.nuxt" :to="link.url">{{
+                    link.name
+                  }}</nuxt-link>
+                  <a v-else :href="link.url">{{ link.name }}</a>
                 </li>
               </ul>
             </div>
@@ -64,3 +52,9 @@
   </div>
   <!-- footer end -->
 </template>
+
+<script>
+export default {
+  props: ['links']
+}
+</script>

@@ -5,7 +5,7 @@
 
     <nuxt />
 
-    <AppFooter />
+    <AppFooter :links="links" />
     <Copyright />
     <MobileNav />
 
@@ -31,6 +31,18 @@ import Copyright from '@/components/Copyright'
 import AppFooter from '@/components/Footer'
 
 export default {
+  data() {
+    return {
+      links: [
+        { name: 'Home', nuxt: true, url: '/' },
+        { name: 'Draws', nuxt: false, url: '/draws' },
+        { name: 'About Us', nuxt: false, url: '/#about-us' },
+        { name: 'F.A.Q', nuxt: false, url: '/faq' },
+        { name: 'Contact Us', nuxt: false, url: '/#contact-us' },
+        { name: 'Deposit', nuxt: false, url: '/deposit' }
+      ]
+    }
+  },
   components: {
     AppHeader,
     VueInjectJs,
