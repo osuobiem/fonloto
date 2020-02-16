@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       links: [
-        { name: 'Home', nuxt: false, url: '/' },
+        { name: 'Home', nuxt: true, url: '/' },
         { name: 'Draws', nuxt: false, url: '/draws' },
         { name: 'About Us', nuxt: true, url: '/about-us' },
         { name: 'F.A.Q', nuxt: true, url: '/faq' },

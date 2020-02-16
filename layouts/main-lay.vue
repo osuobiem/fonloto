@@ -24,7 +24,7 @@ export default {
         { name: 'Home', nuxt: true, url: '/' },
         { name: 'Draws', nuxt: false, url: '/draws' },
         { name: 'About Us', nuxt: false, url: '/#about-us' },
-        { name: 'F.A.Q', nuxt: false, url: '/faq' },
+        { name: 'F.A.Q', nuxt: true, url: '/faq' },
         { name: 'Contact Us', nuxt: false, url: '/#contact-us' },
         { name: 'Deposit', nuxt: false, url: '/deposit' }
       ]
