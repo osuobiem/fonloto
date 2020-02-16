@@ -446,18 +446,18 @@
     if ($(window).scrollTop() > 100) {
       fixed_top.addClass('animated fadeInDown fixed-header')
       topbar.hide()
-      $('#logo-2').attr('src', '_nuxt/assets/img/logo.png')
+      $('#logo-2').attr('src', '/js/logo.png')
       if ($(window).width() < 960) {
         $('.header').removeClass('fixed-header')
-        $('#logo-2').attr('src', '_nuxt/assets/img/logo-alt.png')
+        $('#logo-2').attr('src', '/js/logo-alt.png')
       }
     } else {
       fixed_top.removeClass('animated fadeInDown fixed-header')
       topbar.show()
-      $('#logo-2').attr('src', '_nuxt/assets/img/logo-alt.png')
+      $('#logo-2').attr('src', '/js/logo-alt.png')
       if ($(window).width() < 960) {
         topbar.hide()
-        $('#logo-2').attr('src', '_nuxt/assets/img/logo-alt.png')
+        $('#logo-2').attr('src', '/js/logo-alt.png')
       }
     }
   })
