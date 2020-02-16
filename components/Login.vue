@@ -9,13 +9,13 @@
               <div class="col-xl-12 col-lg-12">
                 <div class="form-group">
                   <label for="InputMail"
-                    >E-mail<span class="requred">*</span></label
+                    >E-mail or Phone<span class="requred">*</span></label
                   >
                   <input
                     type="email"
                     class="form-control"
                     id="InputMail"
-                    placeholder="E-mail *"
+                    placeholder="E-mail or Phone Number *"
                     required
                   />
                 </div>
