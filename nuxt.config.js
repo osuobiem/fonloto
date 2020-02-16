@@ -16,6 +16,19 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 
+    script: [
+      { src: '/js/jquery.js' },
+      { src: '/js/popper.min.js' },
+      { src: '/js/bootstrap.min.js' },
+      { src: '/js/jquery-modal-video.min.js' },
+      { src: '/js/waypoints.min.js' },
+      { src: '/js/wow.min.js' },
+      { src: '/js/jquery.nicescroll.min.js' },
+      { src: '/js/owl.carousel.min.js' },
+      { src: '/js/main.js' },
+      { src: '/js/custom/index.js' }
+    ],
+
     bodyAttrs: {
       class: 'index2'
     }
