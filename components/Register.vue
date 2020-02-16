@@ -2,14 +2,6 @@
   <!-- register begin-->
   <div class="form style-2" style="padding: 50px 0 !important;">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-6 col-md-8">
-          <div class="section-title text-center">
-            <h2>Sign Up to Play</h2>
-            <p>Join <strong>Fonloto</strong>. Target success today!</p>
-          </div>
-        </div>
-      </div>
       <div class="row" style="justify-content: center">
         <div class="col-xl-8 col-lg-8">
           <form>
@@ -71,13 +63,23 @@
                 </div>
               </div>
 
-              <div class="col-xl-6 col-lg-6">
+              <div class="col-xl-12 col-lg-12">
                 <button type="submit" class="submit-button">
-                  Sign Up
+                  Register
                 </button>
               </div>
             </div>
           </form>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-8">
+          <div class="section-title text-center">
+            <p>
+              Already have an account?
+              <nuxt-link to="/join/login">Login</nuxt-link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

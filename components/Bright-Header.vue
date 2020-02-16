@@ -61,8 +61,8 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link sign-up" href="register.html"
-                        >Sign Up</a
+                      <nuxt-link class="nav-link sign-up" to="/join/register"
+                        >Register</nuxt-link
                       >
                     </li>
                   </ul>
