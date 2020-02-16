@@ -12,23 +12,23 @@
                 role="tablist"
                 aria-orientation="vertical"
               >
-                <a
+                <nuxt-link
                   class="nav-link active"
                   id="personal-info-tab"
                   data-toggle="pill"
-                  href="#personal-info"
+                  to="/profile"
                   role="tab"
                   aria-selected="true"
-                  ><i class="far fa-user"></i> Personal Info</a
+                  ><i class="far fa-user"></i> Personal Info</nuxt-link
                 >
-                <a
+                <nuxt-link
                   class="nav-link"
                   id="payment-info-tab"
                   data-toggle="pill"
-                  href="#payment-info"
+                  to="/profile/bank"
                   role="tab"
                   aria-selected="false"
-                  ><i class="fas fa-credit-card"></i> Payment Info</a
+                  ><i class="fa fa-credit-card"></i> Bank Info</nuxt-link
                 >
                 <a
                   class="nav-link"
