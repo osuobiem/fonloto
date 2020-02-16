@@ -13,8 +13,9 @@
                   <nuxt-link to="/">
                     <img
                       style="max-width: 85%"
-                      src="~/assets/img/logo.png"
+                      src="~/assets/img/logo-alt.png"
                       alt=""
+                      id="logo-2"
                     />
                   </nuxt-link>
                 </div>
