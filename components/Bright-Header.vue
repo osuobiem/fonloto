@@ -62,7 +62,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link sign-up" href="register.html"
-                        >Sign In</a
+                        >Sign Up</a
                       >
                     </li>
                   </ul>

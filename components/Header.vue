@@ -59,8 +59,11 @@
                       <a class="nav-link" href="#contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link sign-up" href="register.html"
-                        >Sign In</a
+                      <a
+                        class="nav-link sign-up"
+                        href="#sign_up_modal"
+                        data-toggle="modal"
+                        >Sign Up</a
                       >
                     </li>
                   </ul>
