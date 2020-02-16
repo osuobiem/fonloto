@@ -30,15 +30,15 @@
                   aria-selected="false"
                   ><i class="fa fa-credit-card"></i> Bank Info</nuxt-link
                 >
-                <a
+                <nuxt-link
                   class="nav-link"
                   id="v-pills-messages-tab"
                   data-toggle="pill"
-                  href="#v-pills-messages"
+                  to="/profile/wallet"
                   role="tab"
                   aria-controls="v-pills-messages"
                   aria-selected="false"
-                  ><i class="fas fa-tasks"></i> My Wallet</a
+                  ><i class="fas fa-tasks"></i> My Wallet</nuxt-link
                 >
                 <nuxt-link
                   class="nav-link"
