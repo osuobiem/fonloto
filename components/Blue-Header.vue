@@ -70,7 +70,7 @@
                 <div class="nav-item nav-profile">
                   <div class="profile-bar">
                     <span class="part-name">
-                      Gabriel
+                      Firstname
                     </span>
                     <span class="part-pic">
                       <img src="~/assets/img/testi-user-2.jpg" alt="" />
