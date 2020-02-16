@@ -5,7 +5,7 @@
 <script>
 export default {
   created() {
-    this.$router.push('/join/sign-in')
+    this.$router.push('/join/login')
   }
 }
 </script>
