@@ -6,16 +6,30 @@
         <div class="col-xl-8 col-lg-8">
           <form>
             <div class="row">
-              <div class="col-xl-12 col-lg-12">
+              <div class="col-xl-6 col-lg-6">
                 <div class="form-group">
                   <label for="InputFirstname"
-                    >Full Name<span class="requred">*</span></label
+                    >First Name<span class="requred">*</span></label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="InputFullname"
-                    placeholder="Fullname *"
+                    id="InputFirstname"
+                    placeholder="First Name *"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6">
+                <div class="form-group">
+                  <label for="InputLastname"
+                    >Last Name<span class="requred">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="InputLastname"
+                    placeholder="Last Name *"
                     required
                   />
                 </div>
