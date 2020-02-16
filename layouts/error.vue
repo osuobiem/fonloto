@@ -15,8 +15,9 @@
               </h2>
               <ul>
                 <li>
-                  <a href="/"
-                    ><i class="fa fa-arrow-circle-left"></i> Go back Home</a
+                  <nuxt-link to="/"
+                    ><i class="fa fa-arrow-circle-left"></i> Go back
+                    Home</nuxt-link
                   >
                 </li>
               </ul>
