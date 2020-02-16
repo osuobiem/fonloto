@@ -38,17 +38,17 @@
                   role="tab"
                   aria-controls="v-pills-messages"
                   aria-selected="false"
-                  ><i class="fas fa-tasks"></i> Privacy Settings</a
+                  ><i class="fas fa-tasks"></i> My Wallet</a
                 >
-                <a
+                <nuxt-link
                   class="nav-link"
                   id="v-pills-settings-tab"
                   data-toggle="pill"
-                  href="#v-pills-settings"
+                  to="/profile/settings"
                   role="tab"
                   aria-controls="v-pills-settings"
                   aria-selected="false"
-                  ><i class="fas fa-cog"></i> Account Settings</a
+                  ><i class="fas fa-cog"></i> Account Settings</nuxt-link
                 >
               </div>
             </div>

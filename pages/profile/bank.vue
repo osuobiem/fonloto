@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tab-pane fade"
+    class="tab-pane fade show active"
     id="payment-info"
     role="tabpanel"
     aria-labelledby="payment-info-tab"
