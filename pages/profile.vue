@@ -50,6 +50,16 @@
                   aria-selected="false"
                   ><i class="fas fa-cog"></i> Account Settings</nuxt-link
                 >
+                <nuxt-link
+                  class="nav-link"
+                  id="v-pills-settings-tab"
+                  data-toggle="pill"
+                  to="/profile"
+                  role="tab"
+                  aria-controls="v-pills-settings"
+                  aria-selected="false"
+                  ><i class="fas fa-cog"></i> Logout</nuxt-link
+                >
               </div>
             </div>
           </div>
