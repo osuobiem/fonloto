@@ -1,6 +1,6 @@
 <template>
   <!-- lottery ticket begin -->
-  <div class="lottery-ticket" id="lottery-ticket" style="padding: 70px 0px">
+  <div class="lottery-ticket master" id="lottery-ticket" :style="tweak">
     <div class="container">
       <div
         class="row justify-content-xl-between justify-content-lg-between justify-content-md-center"
@@ -73,7 +73,7 @@
                 <li>
                   <a href="#">Buy ₦200 Ticket</a>
                 </li>
-                <li>
+                <li v-show="show_more">
                   <a href="#">More Draws</a>
                 </li>
               </ul>
@@ -85,3 +85,68 @@
   </div>
   <!-- lottery ticket end -->
 </template>
+
+<script>
+export default {
+  props: ['show_more', 'tweak'],
+
+  mounted() {
+    var nodes = $('.timer')
+    $.each(nodes, function(_index, value) {
+      var date = $(this).data('date')
+
+      setInterval(() => {
+        var endTime = new Date(date)
+        endTime = Date.parse(endTime) / 1000
+
+        var now = new Date()
+        now = Date.parse(now) / 1000
+
+        var timeLeft = endTime - now
+
+        var days = Math.floor(timeLeft / 86400)
+        var hours = Math.floor((timeLeft - days * 86400) / 3600)
+        var minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60)
+        var seconds = Math.floor(
+          timeLeft - days * 86400 - hours * 3600 - minutes * 60
+        )
+
+        if (hours < '10') {
+          hours = '0' + hours
+        }
+        if (minutes < '10') {
+          minutes = '0' + minutes
+        }
+        if (seconds < '10') {
+          seconds = '0' + seconds
+        }
+
+        $(value)
+          .find('.day')
+          .html(days)
+        $(value)
+          .find('.hour')
+          .html(hours)
+        $(value)
+          .find('.minute')
+          .html(minutes)
+        $(value)
+          .find('.second')
+          .html(seconds)
+      }, 1000)
+    })
+  }
+}
+</script>
+
+<style scoped>
+.master {
+  padding: 70px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .master {
+    padding: 10px 0;
+  }
+}
+</style>
