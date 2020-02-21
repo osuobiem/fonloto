@@ -51,3 +51,31 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    $('.Vertical-Slider').css('overflow', 'hidden')
+
+    let thizHeight = '460px' //$('.get-thiz-height').height()
+
+    $('.winners-list').css({
+      height: thizHeight,
+      overflow: 'hidden'
+    })
+
+    $('.Vertical-Slider').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 600,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      pauseOnHover: true,
+      arrows: false,
+      cssEase: 'linear',
+      vertical: true,
+      verticalSwiping: true
+    })
+  }
+}
+</script>

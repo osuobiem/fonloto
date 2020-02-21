@@ -4131,7 +4131,7 @@
         width: 170px;
     }
     .header .menu-bar .mainmenu {
-        z-index: 1;
+        z-index: 1000;
     }
     .player-statics .single-static {
         justify-content: flex-start;
