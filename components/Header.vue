@@ -44,7 +44,7 @@
                       <nuxt-link class="nav-link" to="/">Home</nuxt-link>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/">Draws</nuxt-link>
+                      <nuxt-link class="nav-link" to="/draws">Draws</nuxt-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#how-it-works">How It Works</a>
