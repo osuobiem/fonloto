@@ -12,7 +12,7 @@ module.exports = {
   },
 
   failure(res, message, err = {}) {
-    err = !err ? message : err
+    err = Object.entries(err).length < 1 ? message : err
     console.log(err)
     let go = { status: false, message }
     res.send(go)

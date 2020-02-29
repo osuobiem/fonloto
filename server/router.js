@@ -12,15 +12,17 @@ const Draw = require('./app/controllers/Draw')
   // Create
   app.post('/admins/new', (req, res) => {
     validate.empty(req.body)
-    !validate.status ? report.failure(res, validate.report()) : null
-
-    Admin.create(req.body)
-      .then(resp => {
-        report.success(res, 'Creation Successful')
-      })
-      .catch(err => {
-        report.failure(res, 'Creation Failed', err)
-      })
+    if (validate.status) {
+      Admin.create(req.body)
+        .then(resp => {
+          report.success(res, 'Creation Successful')
+        })
+        .catch(err => {
+          report.failure(res, 'Creation Failed', err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
   })
 
   // Get
@@ -60,15 +62,17 @@ const Draw = require('./app/controllers/Draw')
   app.post('/admins/update/:id', (req, res) => {
     validate.exempt = ['password']
     validate.empty(req.body)
-    !validate.status ? report.failure(res, validate.report()) : null
-
-    Admin.update(req.body, { id: parseInt(req.params.id) })
-      .then(data => {
-        report.success(res, data[0])
-      })
-      .catch(err => {
-        report.failure(res, 'Could not update data', err)
-      })
+    if (validate.status) {
+      Admin.update(req.body, { id: parseInt(req.params.id) })
+        .then(data => {
+          report.success(res, data[0])
+        })
+        .catch(err => {
+          report.failure(res, 'Could not update data', err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
   })
 }
 /** END ADMIN ROUTES */
@@ -78,15 +82,17 @@ const Draw = require('./app/controllers/Draw')
   // Create
   app.post('/draws/new', (req, res) => {
     validate.empty(req.body)
-    !validate.status ? report.failure(res, validate.report()) : null
-
-    Draw.create(req.body)
-      .then(resp => {
-        report.success(res, 'Creation Successful')
-      })
-      .catch(err => {
-        report.failure(res, 'Creation Failed', err)
-      })
+    if (validate.status) {
+      Draw.create(req.body)
+        .then(resp => {
+          report.success(res, 'Creation Successful')
+        })
+        .catch(err => {
+          report.failure(res, 'Creation Failed', err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
   })
 
   // Get
@@ -125,15 +131,17 @@ const Draw = require('./app/controllers/Draw')
   // Update
   app.post('/draws/update/:id', (req, res) => {
     validate.empty(req.body)
-    !validate.status ? report.failure(res, validate.report()) : null
-
-    Draw.update(req.body, { id: parseInt(req.params.id) })
-      .then(data => {
-        report.success(res, data[0])
-      })
-      .catch(err => {
-        report.failure(res, 'Could not update data', err)
-      })
+    if (validate.status) {
+      Draw.update(req.body, { id: parseInt(req.params.id) })
+        .then(data => {
+          report.success(res, data[0])
+        })
+        .catch(err => {
+          report.failure(res, 'Could not update data', err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
   })
 }
 /** END DRAW ROUTES */
