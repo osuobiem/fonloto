@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   success(res, data) {
     let go = { status: true }
@@ -9,7 +11,8 @@ module.exports = {
     res.send(go)
   },
 
-  failure(res, err, message) {
+  failure(res, message, err = {}) {
+    err = !err ? message : err
     console.log(err)
     let go = { status: false, message }
     res.send(go)
