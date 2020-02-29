@@ -1,31 +1,31 @@
-"use strict";
+'use strict'
 
-const CORE = require("./core");
+const CORE = require('./core')
 
-let core = new CORE();
+let core = new CORE()
 
 class MySQL {
-  query = "";
-  table;
+  query = ''
+  table
 
   // Reserved keywords to be used in query objects
   reserved = {
-    $and: "AND",
-    $or: "OR",
-    $eq: "=",
-    $neq: "!=",
-    $gt: ">",
-    $lt: "<",
-    $gte: ">=",
-    $lte: "<=",
-    $lim: "LIMIT",
-    $ord: "ORDER BY"
-  };
+    $and: 'AND',
+    $or: 'OR',
+    $eq: '=',
+    $neq: '!=',
+    $gt: '>',
+    $lt: '<',
+    $gte: '>=',
+    $lte: '<=',
+    $lim: 'LIMIT',
+    $ord: 'ORDER BY'
+  }
 
   constructor(table) {
-    this.table = table;
+    this.table = table
 
-    core.connect();
+    core.connect()
   }
 
   /**
@@ -35,16 +35,13 @@ class MySQL {
     return new Promise((resolve, reject) => {
       core.db.query(this.query, {}, (err, results, fields) => {
         if (err) {
-          reject("An error occured. Could not continue!");
-          console.log(err);
+          reject('An error occured. Could not continue!')
+          console.log(err)
         }
 
-        resolve({
-          results,
-          fields
-        });
-      });
-    });
+        resolve(results)
+      })
+    })
   }
 
   /**
@@ -52,33 +49,33 @@ class MySQL {
    */
   async read(query_object = {}) {
     if (this.count(query_object) < 1) {
-      this.query = `SELECT * FROM ${this.table}`;
+      this.query = `SELECT * FROM ${this.table}`
     } else {
-      this.query = "SELECT ";
+      this.query = 'SELECT '
 
       if (query_object.fields) {
-        let c = 1;
-        let fields = query_object.fields;
+        let c = 1
+        let fields = query_object.fields
 
-        [...fields].forEach(el => {
+        ;[...fields].forEach(el => {
           if (c == fields.length) {
-            this.query += el;
+            this.query += el
           } else {
-            this.query += el + ", ";
+            this.query += el + ', '
           }
-          c++;
-        });
+          c++
+        })
 
-        this.query += ` FROM ${this.table}`;
-        delete query_object.fields;
+        this.query += ` FROM ${this.table}`
+        delete query_object.fields
       } else {
-        this.query += `* FROM ${this.table}`;
+        this.query += `* FROM ${this.table}`
       }
 
-      this.compose(query_object);
+      this.compose(query_object)
     }
 
-    return await this.query;
+    return await this.exec()
   }
 
   /**
@@ -87,34 +84,34 @@ class MySQL {
    * @param {object} data
    */
   async create(data) {
-    let c = 1;
+    let c = 1
 
-    this.query = `INSERT INTO ${this.table} `;
-    let fields = "";
-    let values = "";
+    this.query = `INSERT INTO ${this.table} `
+    let fields = ''
+    let values = ''
 
     Object.entries(data).forEach(([key, value]) => {
       if (c == this.count(data)) {
-        fields += `${key}) `;
-        values += this.getType(value) == "number" ? `${value})` : `'${value}')`;
+        fields += `${key}) `
+        values += this.getType(value) == 'number' ? `${value})` : `'${value}')`
       } else if (c == 1) {
-        fields += `(${key}, `;
+        fields += `(${key}, `
         values +=
-          this.getType(value) == "number"
+          this.getType(value) == 'number'
             ? `VALUES (${value}, `
-            : `VALUES ('${value}', `;
+            : `VALUES ('${value}', `
       } else {
-        fields += `${key}, `;
+        fields += `${key}, `
         values +=
-          this.getType(value) == "number" ? `${value}, ` : `'${value}', `;
+          this.getType(value) == 'number' ? `${value}, ` : `'${value}', `
       }
 
-      c++;
-    });
+      c++
+    })
 
-    this.query += fields + values;
+    this.query += fields + values
 
-    return await this.exec();
+    return await this.exec()
   }
 
   /**
@@ -124,28 +121,28 @@ class MySQL {
    * @param {object} query
    */
   async modify(data, query = {}) {
-    let c = 1;
+    let c = 1
 
-    this.query = `UPDATE ${this.table} SET `;
+    this.query = `UPDATE ${this.table} SET `
 
     Object.entries(data).forEach(([key, value]) => {
       if (c == this.count(data)) {
-        value = this.getType(value) == "number" ? `${value}` : `'${value}'`;
-        this.query += `${key} = ${value}`;
+        value = this.getType(value) == 'number' ? `${value}` : `'${value}'`
+        this.query += `${key} = ${value}`
       } else {
-        value = this.getType(value) == "number" ? `${value}` : `'${value}'`;
-        this.query += `${key} = ${value}, `;
+        value = this.getType(value) == 'number' ? `${value}` : `'${value}'`
+        this.query += `${key} = ${value}, `
       }
 
-      c++;
-    });
+      c++
+    })
 
     if (this.count(query) > 0) {
-      this.query += " WHERE";
-      this.traverse(query);
+      this.query += ' WHERE'
+      this.traverse(query)
     }
 
-    return await this.exec();
+    return await this.exec()
   }
 
   /**
@@ -154,11 +151,11 @@ class MySQL {
    * @param {object} query
    */
   async remove(query = {}) {
-    this.query = `DELETE FROM ${this.table}`;
+    this.query = `DELETE FROM ${this.table}`
 
-    this.count(query) > 0 ? this.traverse(query) : "";
+    this.count(query) > 0 ? this.compose(query) : ''
 
-    return await this.exec();
+    return await this.exec()
   }
 
   /**
@@ -167,11 +164,13 @@ class MySQL {
    * @param {obj} obj
    */
   compose(obj) {
-    if (obj.$ext && this.count(obj) > 1) {
-      this.query += " WHERE";
+    if (obj.$ext && this.count(obj) > 0) {
+      this.query += ' WHERE'
+    } else if (!obj.$ext && this.count(obj) > 0) {
+      this.query += ' WHERE'
     }
 
-    this.traverse(obj);
+    this.traverse(obj)
   }
 
   /**
@@ -179,37 +178,37 @@ class MySQL {
    * @param {object} obj
    */
   traverse(obj) {
-    let ext = {};
+    let ext = {}
 
     if (obj.$ext) {
-      ext = obj.$ext;
+      ext = obj.$ext
 
-      delete obj.$ext;
+      delete obj.$ext
     }
 
     if (this.count(obj) > 0) {
       Object.entries(obj).forEach(([key, value]) => {
         if (this.reserved[key]) {
-          if (this.getType(value) == "object") {
-            this.query += ` ${this.reserved[key]}`;
-            this.traverse(value);
+          if (this.getType(value) == 'object') {
+            this.query += ` ${this.reserved[key]}`
+            this.traverse(value)
           } else {
-            this.query += ` ${this.reserved[key]} ${value}`;
+            this.query += ` ${this.reserved[key]} ${value}`
           }
         } else {
-          if (this.getType(value) == "object") {
-            this.query += ` ${key}`;
-            this.traverse(value);
+          if (this.getType(value) == 'object') {
+            this.query += ` ${key}`
+            this.traverse(value)
           } else {
-            value = this.getType(value) == "number" ? `${value}` : `'${value}'`;
-            this.query += ` ${key} = ${value}`;
+            value = this.getType(value) == 'number' ? `${value}` : `'${value}'`
+            this.query += ` ${key} = ${value}`
           }
         }
-      });
+      })
     }
 
     if (ext) {
-      this.traverseExt(ext);
+      this.traverseExt(ext)
     }
   }
 
@@ -221,21 +220,21 @@ class MySQL {
   traverseExt(obj) {
     Object.entries(obj).forEach(([key, value]) => {
       if (this.reserved[key]) {
-        if (this.getType(value) == "object") {
-          this.query += ` ${this.reserved[key]}`;
-          this.traverseExt(value);
+        if (this.getType(value) == 'object') {
+          this.query += ` ${this.reserved[key]}`
+          this.traverseExt(value)
         } else {
-          this.query += ` ${this.reserved[key]} ${value}`;
+          this.query += ` ${this.reserved[key]} ${value}`
         }
       } else {
-        if (this.getType(value) == "object") {
-          this.query += ` ${key}`;
-          this.traverseExt(value);
+        if (this.getType(value) == 'object') {
+          this.query += ` ${key}`
+          this.traverseExt(value)
         } else {
-          this.query += ` ${key} ${value}`;
+          this.query += ` ${key} ${value}`
         }
       }
-    });
+    })
   }
 
   /**
@@ -244,15 +243,15 @@ class MySQL {
    * @returns {string}
    */
   getType(element) {
-    let r = "";
+    let r = ''
 
-    if (typeof element == "object" && Array.isArray(element)) {
-      r = "array";
+    if (typeof element == 'object' && Array.isArray(element)) {
+      r = 'array'
     } else {
-      r = typeof element;
+      r = typeof element
     }
 
-    return r;
+    return r
   }
 
   /**
@@ -260,8 +259,8 @@ class MySQL {
    * @param {object} object
    */
   count(object) {
-    return Object.keys(object).length;
+    return Object.keys(object).length
   }
 }
 
-module.exports = MySQL;
+module.exports = MySQL

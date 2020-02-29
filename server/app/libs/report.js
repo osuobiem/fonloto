@@ -9,7 +9,8 @@ module.exports = {
     res.send(go)
   },
 
-  failure(res, message) {
+  failure(res, err, message) {
+    console.log(err)
     let go = { status: false, message }
     res.send(go)
   }
