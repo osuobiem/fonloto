@@ -5,6 +5,7 @@ const validate = require('./app/libs/validate')
 
 // CONTROLLERS
 const Admin = require('./app/controllers/Admin')
+const Draw = require('./app/controllers/Draw')
 
 /** ADMIN ROUTES */
 {
@@ -71,6 +72,71 @@ const Admin = require('./app/controllers/Admin')
   })
 }
 /** END ADMIN ROUTES */
+
+/** DRAW ROUTES */
+{
+  // Create
+  app.post('/draws/new', (req, res) => {
+    validate.empty(req.body)
+    !validate.status ? report.failure(res, validate.report()) : null
+
+    Draw.create(req.body)
+      .then(resp => {
+        report.success(res, 'Creation Successful')
+      })
+      .catch(err => {
+        report.failure(res, 'Creation Failed', err)
+      })
+  })
+
+  // Get
+  app.get('/draws', (req, res) => {
+    Draw.get()
+      .then(data => {
+        report.success(res, data)
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Get One
+  app.get('/draws/:id', (req, res) => {
+    Draw.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Delete
+  app.get('/draws/delete/:id', (req, res) => {
+    Draw.delete({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not delete data', err)
+      })
+  })
+
+  // Update
+  app.post('/draws/update/:id', (req, res) => {
+    validate.empty(req.body)
+    !validate.status ? report.failure(res, validate.report()) : null
+
+    Draw.update(req.body, { id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not update data', err)
+      })
+  })
+}
+/** END DRAW ROUTES */
 
 module.exports = {
   path: '/api',

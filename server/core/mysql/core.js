@@ -1,11 +1,12 @@
-"use strict";
+'use strict'
 
-const mysql = require("mysql");
+const mysql = require('mysql')
 
-const config = require("../config/database");
+const config = require('../config/database')
 
 class CORE {
-  db;
+  db
+  connected = false
 
   constructor() {
     this.db = mysql.createConnection({
@@ -13,15 +14,18 @@ class CORE {
       user: config.user,
       password: config.password,
       database: config.database
-    });
+    })
   }
 
   connect() {
-    this.db.connect(err => {
-      if (err) throw err;
-      console.log(`Connected to ${config.database} MySQL database!`);
-    });
+    if (!this.connected) {
+      this.connected = true
+      this.db.connect(err => {
+        if (err) throw err
+        console.log(`Connected to ${config.database} MySQL database!`)
+      })
+    }
   }
 }
 
-module.exports = CORE;
+module.exports = CORE
