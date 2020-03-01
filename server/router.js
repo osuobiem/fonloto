@@ -15,7 +15,7 @@ const Draw = require('./app/controllers/Draw')
     if (validate.status) {
       Admin.create(req.body)
         .then(resp => {
-          report.success(res, 'Creation Successful')
+          report.success(res, resp[0])
         })
         .catch(err => {
           report.failure(res, 'Creation Failed', err)
@@ -130,7 +130,6 @@ const Draw = require('./app/controllers/Draw')
 
   // Update
   app.post('/draws/update/:id', (req, res) => {
-    validate.exempt = ['active']
     validate.empty(req.body)
 
     if (validate.status) {
