@@ -38,6 +38,7 @@ module.exports = {
     let err = this.errors
     this.errors = {}
     this.status = true
+    this.exempt = []
 
     return err
   }
