@@ -27,7 +27,7 @@ module.exports = {
   remove(data) {
     if (this.exempt) {
       ;[...this.exempt].forEach(el => {
-        delete data[el]
+        data[el].length < 1 ? delete data[el] : null
       })
     }
 

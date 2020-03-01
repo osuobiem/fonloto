@@ -130,7 +130,9 @@ const Draw = require('./app/controllers/Draw')
 
   // Update
   app.post('/draws/update/:id', (req, res) => {
+    validate.exempt = ['active']
     validate.empty(req.body)
+
     if (validate.status) {
       Draw.update(req.body, { id: parseInt(req.params.id) })
         .then(data => {
