@@ -15,10 +15,10 @@ const Draw = require('./app/controllers/Draw')
     if (validate.status) {
       Admin.create(req.body)
         .then(resp => {
-          report.success(res, resp[0])
+          report.success(res, resp)
         })
         .catch(err => {
-          report.failure(res, 'Creation Failed', err)
+          report.failure(res, err)
         })
     } else {
       report.failure(res, validate.report())
@@ -69,6 +69,22 @@ const Draw = require('./app/controllers/Draw')
         })
         .catch(err => {
           report.failure(res, 'Could not update data', err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
+  })
+
+  // Login
+  app.post('/admins/login', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      Admin.login(req.body)
+        .then(resp => {
+          report.success(res, resp)
+        })
+        .catch(err => {
+          report.failure(res, err)
         })
     } else {
       report.failure(res, validate.report())
