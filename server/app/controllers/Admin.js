@@ -56,7 +56,7 @@ module.exports = {
         } else {
           admin.attr = data
 
-          if (data.password && data.password.length > 0) {
+          if (data.hasOwnProperty('password') && data.password.length > 0) {
             bcrypt.hash(data.password, 10, async (err, hash) => {
               if (err) {
                 console.log(err)
