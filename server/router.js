@@ -101,10 +101,10 @@ const Draw = require('./app/controllers/Draw')
     if (validate.status) {
       Draw.create(req.body)
         .then(resp => {
-          report.success(res, 'Creation Successful')
+          report.success(res, resp)
         })
         .catch(err => {
-          report.failure(res, 'Creation Failed', err)
+          report.failure(res, err)
         })
     } else {
       report.failure(res, validate.report())
