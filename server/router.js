@@ -147,14 +147,13 @@ const Draw = require('./app/controllers/Draw')
   // Update
   app.post('/draws/update/:id', (req, res) => {
     validate.empty(req.body)
-
     if (validate.status) {
-      Draw.update(req.body, { id: parseInt(req.params.id) })
-        .then(data => {
-          report.success(res, data[0])
+      Draw.update(req.body, { id: req.params.id })
+        .then(resp => {
+          report.success(res, resp)
         })
         .catch(err => {
-          report.failure(res, 'Could not update data', err)
+          report.failure(res, err)
         })
     } else {
       report.failure(res, validate.report())
