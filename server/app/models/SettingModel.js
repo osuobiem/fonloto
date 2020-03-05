@@ -6,7 +6,7 @@ class SettingModel extends Model {
   attr = {
     id: '',
     name: '',
-    options: ''
+    value: ''
   }
 
   constructor() {
@@ -14,4 +14,4 @@ class SettingModel extends Model {
   }
 }
 
-module.exports = DrawModel
+module.exports = SettingModel
