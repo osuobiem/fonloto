@@ -2,7 +2,7 @@
 
 const AdminModel = require('../models/AdminModel')
 const bcrypt = require('bcrypt')
-const validate = require('../libs/validate')
+const jwt = require('../libs/jwt')
 
 let admin = new AdminModel()
 
@@ -117,6 +117,11 @@ module.exports = {
 
           this.comparePassword(data.password, res[0].password)
             .then(() => {
+              res[0].token = jwt.issue({
+                id: res[0].id,
+                username: res[0].username
+              })
+
               resolve(res[0])
             })
             .catch(err => {
