@@ -1,10 +1,16 @@
-"use strict";
+'use strict'
 
 // Require useful modules
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv')
+const path = require('path')
+
+dotenv.config({
+  path: path.join(__dirname, '../../../.env')
+})
 
 // JWT secret key
-const key = process.env.JWT_KEY;
+const key = process.env.JWT_KEY
 
 module.exports = {
   /**
@@ -14,8 +20,8 @@ module.exports = {
    */
   issue(payload) {
     return jwt.sign(payload, key, {
-      expiresIn: "1 day"
-    });
+      expiresIn: '1 day'
+    })
   },
 
   /**
@@ -25,6 +31,6 @@ module.exports = {
    * @param {function} callback
    */
   verify(token, callback) {
-    return jwt.verify(token, key, {}, callback);
+    return jwt.verify(token, key, {}, callback)
   }
-};
+}

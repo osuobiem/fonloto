@@ -2,11 +2,15 @@ const app = require('express')()
 
 const report = require('./app/libs/report')
 const validate = require('./app/libs/validate')
+const AccessFilter = require('./app/middlewares/AccessFilter')
 
 // CONTROLLERS
 const Admin = require('./app/controllers/Admin')
 const Draw = require('./app/controllers/Draw')
 const Setting = require('./app/controllers/Setting')
+
+AccessFilter.exempt = ['/admins/login']
+app.use(AccessFilter.filter)
 
 /** ADMIN ROUTES */
 {
