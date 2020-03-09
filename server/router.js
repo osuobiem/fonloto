@@ -10,6 +10,7 @@ const Draw = require('./app/controllers/Draw')
 const Setting = require('./app/controllers/Setting')
 const Contact = require('./app/controllers/Contact')
 const Winner = require('./app/controllers/Winner')
+const FAQCat = require('./app/controllers/FAQCategory')
 
 AccessFilter.exempt = ['/admins/login']
 app.use(AccessFilter.filter)
@@ -327,6 +328,75 @@ app.use(AccessFilter.filter)
   // Delete
   app.get('/winners/delete/:id', (req, res) => {
     Winner.delete({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not delete data', err)
+      })
+  })
+}
+/** END WINNER ROUTES */
+
+/** FAQ CATEGORY ROUTES */
+{
+  // Create
+  app.post('/faq-cats/new', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      FAQCat.create(req.body)
+        .then(resp => {
+          report.success(res, resp)
+        })
+        .catch(err => {
+          report.failure(res, err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
+  })
+
+  // Get All
+  app.get('/faq-cats', (req, res) => {
+    FAQCat.get()
+      .then(data => {
+        report.success(res, data)
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Get One
+  app.get('/faq-cats/:id', (req, res) => {
+    FAQCat.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Update
+  app.post('/faq-cats/update/:id', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      FAQCat.update(req.body, { id: req.params.id })
+        .then(resp => {
+          report.success(res, resp)
+        })
+        .catch(err => {
+          report.failure(res, err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
+  })
+
+  // Delete
+  app.get('/faq-cats/delete/:id', (req, res) => {
+    FAQCat.delete({ id: parseInt(req.params.id) })
       .then(data => {
         report.success(res, data[0])
       })

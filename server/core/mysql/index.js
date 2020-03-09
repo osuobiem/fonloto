@@ -91,22 +91,31 @@ class MySQL {
     let values = ''
 
     Object.entries(data).forEach(([key, value]) => {
-      if (c == this.count(data)) {
-        fields += `${key}) `
-        values += this.getType(value) == 'number' ? `${value})` : `'${value}')`
-      } else if (c == 1) {
-        fields += `(${key}, `
+      if (this.count(data) > 1) {
+        if (c == this.count(data)) {
+          fields += `${key}) `
+          values +=
+            this.getType(value) == 'number' ? `${value})` : `'${value}')`
+        } else if (c == 1) {
+          fields += `(${key}, `
+          values +=
+            this.getType(value) == 'number'
+              ? `VALUES (${value}, `
+              : `VALUES ('${value}', `
+        } else {
+          fields += `${key}, `
+          values +=
+            this.getType(value) == 'number' ? `${value}, ` : `'${value}', `
+        }
+
+        c++
+      } else {
+        fields += `(${key}) `
         values +=
           this.getType(value) == 'number'
-            ? `VALUES (${value}, `
-            : `VALUES ('${value}', `
-      } else {
-        fields += `${key}, `
-        values +=
-          this.getType(value) == 'number' ? `${value}, ` : `'${value}', `
+            ? `VALUES (${value})`
+            : `VALUES ('${value}')`
       }
-
-      c++
     })
 
     this.query += fields + values
