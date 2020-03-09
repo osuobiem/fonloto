@@ -9,6 +9,7 @@ const Admin = require('./app/controllers/Admin')
 const Draw = require('./app/controllers/Draw')
 const Setting = require('./app/controllers/Setting')
 const Contact = require('./app/controllers/Contact')
+const Winner = require('./app/controllers/Winner')
 
 AccessFilter.exempt = ['/admins/login']
 app.use(AccessFilter.filter)
@@ -267,6 +268,74 @@ app.use(AccessFilter.filter)
   })
 }
 /** END CONTACT ROUTES */
+
+/** WINNER ROUTES */
+{
+  // Create
+  app.post('/winners/new', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      Winner.create(req.body)
+        .then(resp => {
+          report.success(res, resp)
+        })
+        .catch(err => {
+          report.failure(res, err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
+  })
+
+  // Get All
+  app.get('/winners', (req, res) => {
+    Winner.get()
+      .then(data => {
+        report.success(res, data)
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Get With Limit
+  app.get('/winners/limit/:limit', (req, res) => {
+    Winner.get({
+      $ext: {
+        $lim: req.params.limit
+      }
+    })
+      .then(data => {
+        report.success(res, data)
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Get One
+  app.get('/winners/:id', (req, res) => {
+    Winner.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+
+  // Delete
+  app.get('/winners/delete/:id', (req, res) => {
+    Winner.delete({ id: parseInt(req.params.id) })
+      .then(data => {
+        report.success(res, data[0])
+      })
+      .catch(err => {
+        report.failure(res, 'Could not delete data', err)
+      })
+  })
+}
+/** END WINNER ROUTES */
 
 module.exports = {
   path: '/api',

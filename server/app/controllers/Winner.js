@@ -28,6 +28,21 @@ module.exports = {
   },
 
   async get(criteria = {}) {
+    if (criteria.$ext) {
+      criteria.$ext = {
+        $ord: {
+          created_at: 'DESC'
+        },
+        $lim: criteria.$ext.$lim
+      }
+    } else {
+      criteria.$ext = {
+        $ord: {
+          created_at: 'DESC'
+        }
+      }
+    }
+
     return await winner.get(criteria)
   },
 
