@@ -8,6 +8,7 @@ const AccessFilter = require('./app/middlewares/AccessFilter')
 const Admin = require('./app/controllers/Admin')
 const Draw = require('./app/controllers/Draw')
 const Setting = require('./app/controllers/Setting')
+const Contact = require('./app/controllers/Contact')
 
 AccessFilter.exempt = ['/admins/login']
 app.use(AccessFilter.filter)
@@ -235,6 +236,37 @@ app.use(AccessFilter.filter)
   })
 }
 /** END SETTING ROUTES */
+
+/** CONTACT ROUTES */
+{
+  // Create
+  app.post('/contacts/new', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      Contact.create(req.body)
+        .then(resp => {
+          report.success(res, resp)
+        })
+        .catch(err => {
+          report.failure(res, err)
+        })
+    } else {
+      report.failure(res, validate.report())
+    }
+  })
+
+  // Get
+  app.get('/contacts', (req, res) => {
+    Contact.get()
+      .then(data => {
+        report.success(res, data)
+      })
+      .catch(err => {
+        report.failure(res, 'Could not fetch data', err)
+      })
+  })
+}
+/** END CONTACT ROUTES */
 
 module.exports = {
   path: '/api',
