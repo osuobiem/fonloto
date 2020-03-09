@@ -7,7 +7,6 @@ class DrawModel extends Model {
     id: '',
     name: '',
     description: '',
-    image: '',
     amount: '',
     will_begin: '',
     price_per_ticket: '',

@@ -28,7 +28,8 @@ module.exports = {
       { src: '/js/jquery.nicescroll.min.js' },
       { src: '/js/owl.carousel.min.js' },
       { src: '/js/main.js' },
-      { src: '/js/custom/index.js' }
+      { src: '/js/custom/index.js' },
+      { src: '/js/slick.js' }
     ],
 
     bodyAttrs: {
