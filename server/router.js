@@ -12,6 +12,7 @@ const Contact = require('./app/controllers/Contact')
 const Winner = require('./app/controllers/Winner')
 const FAQCat = require('./app/controllers/FAQCategory')
 const FAQ = require('./app/controllers/FAQ')
+const User = require('./app/controllers/User')
 
 AccessFilter.exempt = ['/admins/login']
 app.use(AccessFilter.filter)
@@ -487,6 +488,92 @@ app.use(AccessFilter.filter)
   })
 }
 /** END FAQ ROUTES */
+
+/** USER ROUTES */
+{
+  // Create
+  app.post('/users/new', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      User.create(req.body)
+        .then(resp => {
+          res.send(report.success(resp))
+        })
+        .catch(err => {
+          res.send(report.failure(err))
+        })
+    } else {
+      res.send(report.failure(validate.report()))
+    }
+  })
+
+  // Get
+  app.get('/users', (req, res) => {
+    User.get()
+      .then(data => {
+        res.send(report.success(data))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Get One
+  app.get('/users/:id', (req, res) => {
+    User.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Delete
+  app.get('/users/delete/:id', (req, res) => {
+    User.delete({ id: parseInt(req.params.id) })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not delete data', err))
+      })
+  })
+
+  // Update
+  app.post('/users/update/:id', (req, res) => {
+    validate.exempt = ['password']
+    validate.empty(req.body)
+    if (validate.status) {
+      User.update(req.body, { id: req.params.id })
+        .then(resp => {
+          res.send(report.success(resp))
+        })
+        .catch(err => {
+          res.send(report.failure(err))
+        })
+    } else {
+      res.send(report.failure(validate.report()))
+    }
+  })
+
+  // Login
+  app.post('/users/login', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      User.login(req.body)
+        .then(resp => {
+          res.send(report.success(resp))
+        })
+        .catch(err => {
+          res.send(report.failure(err))
+        })
+    } else {
+      res.send(report.failure(validate.report()))
+    }
+  })
+}
+/** END USER ROUTES */
 
 module.exports = {
   path: '/api',

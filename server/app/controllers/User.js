@@ -119,14 +119,14 @@ module.exports = {
     return new Promise((resolve, reject) => {
       let q = {}
       if (data.hasOwnProperty('email')) {
-        d = { email: data.email }
+        q = { email: data.email }
       } else if (data.hasOwnProperty('phone')) {
-        d = { phone: data.phone }
+        q = { phone: data.phone }
       } else {
         reject('No email or phone field available!')
       }
 
-      this.get(d)
+      this.get(q)
         .then(res => {
           res.length < 1 ? reject('Invalid Credentials!') : null
 
