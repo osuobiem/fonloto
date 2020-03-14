@@ -1,20 +1,20 @@
 'use strict'
 
 module.exports = {
-  success(res, data) {
+  success(data) {
     let go = { status: true }
     if (typeof data == 'string') {
       go.message = data
     } else {
       go.data = data
     }
-    res.send(go)
+    return go
   },
 
-  failure(res, message, err = {}) {
+  failure(message, err = {}) {
     err = Object.entries(err).length < 1 ? message : err
     console.log(err)
     let go = { status: false, message }
-    res.send(go)
+    return go
   }
 }

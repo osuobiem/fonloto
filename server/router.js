@@ -11,6 +11,7 @@ const Setting = require('./app/controllers/Setting')
 const Contact = require('./app/controllers/Contact')
 const Winner = require('./app/controllers/Winner')
 const FAQCat = require('./app/controllers/FAQCategory')
+const FAQ = require('./app/controllers/FAQ')
 
 AccessFilter.exempt = ['/admins/login']
 app.use(AccessFilter.filter)
@@ -23,13 +24,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Admin.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -37,10 +38,10 @@ app.use(AccessFilter.filter)
   app.get('/admins', (req, res) => {
     Admin.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -48,10 +49,10 @@ app.use(AccessFilter.filter)
   app.get('/admins/:id', (req, res) => {
     Admin.get({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -59,10 +60,10 @@ app.use(AccessFilter.filter)
   app.get('/admins/delete/:id', (req, res) => {
     Admin.delete({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not delete data', err)
+        res.send(report.failure('Could not delete data', err))
       })
   })
 
@@ -73,13 +74,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Admin.update(req.body, { id: req.params.id })
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -89,13 +90,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Admin.login(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 }
@@ -109,13 +110,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Draw.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -123,10 +124,10 @@ app.use(AccessFilter.filter)
   app.get('/draws', (req, res) => {
     Draw.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -134,10 +135,10 @@ app.use(AccessFilter.filter)
   app.get('/draws/:id', (req, res) => {
     Draw.get({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -145,10 +146,10 @@ app.use(AccessFilter.filter)
   app.get('/draws/delete/:id', (req, res) => {
     Draw.delete({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not delete data', err)
+        res.send(report.failure('Could not delete data', err))
       })
   })
 
@@ -158,13 +159,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Draw.update(req.body, { id: req.params.id })
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 }
@@ -178,13 +179,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Setting.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -192,10 +193,10 @@ app.use(AccessFilter.filter)
   app.get('/settings', (req, res) => {
     Setting.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -203,10 +204,10 @@ app.use(AccessFilter.filter)
   app.get('/settings/:id', (req, res) => {
     Setting.get({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -214,10 +215,10 @@ app.use(AccessFilter.filter)
   app.get('/settings/delete/:id', (req, res) => {
     Setting.delete({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not delete data', err)
+        res.send(report.failure('Could not delete data', err))
       })
   })
 
@@ -227,13 +228,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Setting.update(req.body, { id: req.params.id })
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 }
@@ -247,13 +248,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Contact.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -261,10 +262,10 @@ app.use(AccessFilter.filter)
   app.get('/contacts', (req, res) => {
     Contact.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 }
@@ -278,13 +279,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       Winner.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -292,10 +293,10 @@ app.use(AccessFilter.filter)
   app.get('/winners', (req, res) => {
     Winner.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -307,10 +308,10 @@ app.use(AccessFilter.filter)
       }
     })
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -318,10 +319,10 @@ app.use(AccessFilter.filter)
   app.get('/winners/:id', (req, res) => {
     Winner.get({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -329,10 +330,10 @@ app.use(AccessFilter.filter)
   app.get('/winners/delete/:id', (req, res) => {
     Winner.delete({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not delete data', err)
+        res.send(report.failure('Could not delete data', err))
       })
   })
 }
@@ -346,13 +347,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       FAQCat.create(req.body)
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -360,10 +361,10 @@ app.use(AccessFilter.filter)
   app.get('/faq-cats', (req, res) => {
     FAQCat.get()
       .then(data => {
-        report.success(res, data)
+        res.send(report.success(data))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -371,10 +372,10 @@ app.use(AccessFilter.filter)
   app.get('/faq-cats/:id', (req, res) => {
     FAQCat.get({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not fetch data', err)
+        res.send(report.failure('Could not fetch data', err))
       })
   })
 
@@ -384,13 +385,13 @@ app.use(AccessFilter.filter)
     if (validate.status) {
       FAQCat.update(req.body, { id: req.params.id })
         .then(resp => {
-          report.success(res, resp)
+          res.send(report.success(resp))
         })
         .catch(err => {
-          report.failure(res, err)
+          res.send(report.failure(err))
         })
     } else {
-      report.failure(res, validate.report())
+      res.send(report.failure(validate.report()))
     }
   })
 
@@ -398,14 +399,94 @@ app.use(AccessFilter.filter)
   app.get('/faq-cats/delete/:id', (req, res) => {
     FAQCat.delete({ id: parseInt(req.params.id) })
       .then(data => {
-        report.success(res, data[0])
+        res.send(report.success(data[0]))
       })
       .catch(err => {
-        report.failure(res, 'Could not delete data', err)
+        res.send(report.failure('Could not delete data', err))
       })
   })
 }
-/** END WINNER ROUTES */
+/** END FAQ CATEGORY ROUTES */
+
+/** FAQ ROUTES */
+{
+  // Create
+  app.post('/faqs/new', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      FAQ.create(req.body)
+        .then(resp => {
+          res.send(report.success(resp))
+        })
+        .catch(err => {
+          res.send(report.failure(err))
+        })
+    } else {
+      res.send(report.failure(validate.report()))
+    }
+  })
+
+  // Get All
+  app.get('/faqs', (req, res) => {
+    FAQ.get()
+      .then(data => {
+        res.send(report.success(data))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Get According to Category
+  app.get('/faqs/category/:category', (req, res) => {
+    FAQ.get({ category: req.params.category })
+      .then(data => {
+        res.send(report.success(data))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Get One
+  app.get('/faqs/:id', (req, res) => {
+    FAQ.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Update
+  app.post('/faqs/update/:id', (req, res) => {
+    validate.empty(req.body)
+    if (validate.status) {
+      FAQ.update(req.body, { id: req.params.id })
+        .then(resp => {
+          res.send(report.success(resp))
+        })
+        .catch(err => {
+          res.send(report.failure(err))
+        })
+    } else {
+      res.send(report.failure(validate.report()))
+    }
+  })
+
+  // Delete
+  app.get('/faqs/delete/:id', (req, res) => {
+    FAQ.delete({ id: parseInt(req.params.id) })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not delete data', err))
+      })
+  })
+}
+/** END FAQ ROUTES */
 
 module.exports = {
   path: '/api',

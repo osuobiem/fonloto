@@ -25,7 +25,7 @@ module.exports = {
   },
 
   remove(data) {
-    if (this.exempt) {
+    if (this.exempt.count) {
       ;[...this.exempt].forEach(el => {
         data.hasOwnProperty(el) && data[el].length < 1 ? delete data[el] : null
       })
