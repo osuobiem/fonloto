@@ -11,6 +11,7 @@ class UserModel extends Model {
     phone: '',
     password: '',
     country: '',
+    photo: '',
     active: '',
     remember_token: ''
   }
