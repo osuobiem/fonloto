@@ -121,9 +121,12 @@ module.exports = {
       if (data.hasOwnProperty('email')) {
         d = { email: data.email }
       } else if (data.hasOwnProperty('phone')) {
+        d = { phone: data.phone }
+      } else {
+        reject('No email or phone field available!')
       }
 
-      this.get()
+      this.get(d)
         .then(res => {
           res.length < 1 ? reject('Invalid Credentials!') : null
 
@@ -131,7 +134,7 @@ module.exports = {
             .then(() => {
               res[0].token = jwt.issue({
                 id: res[0].id,
-                username: res[0].username
+                email: res[0].email
               })
 
               resolve(res[0])
