@@ -214,8 +214,9 @@ export default {
     Contact
   },
   layout: 'main-lay',
-  mounted() {
-    
+  
+  created() {
+    this.$store.dispatch('setSite')
   }
 }
 </script>

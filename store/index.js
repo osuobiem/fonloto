@@ -1,6 +1,13 @@
-import vue from 'vue'
 import vuex from 'vuex'
 
-vue.use(vuex)
+import site from './modules/site'
 
-export default new vuex.Store({})
+let createStore = () => {
+  return new vuex.Store({
+    modules: {
+      site
+    }
+  })
+}
+
+export default createStore
