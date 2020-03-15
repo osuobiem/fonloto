@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <!-- banner begin -->
     <div class="banner" data-aos="fade-up" data-aos-duration="1500">
       <div class="container">
@@ -213,6 +213,14 @@ export default {
     about_us() {
       return this.$store.getters.about_us 
     }
+  },
+  mounted() {
+    let html = document.getElementsByTagName('html')[0]
+    html.setAttribute('style', 'scroll-behavior: smooth')
+  },
+  beforeDestroy() {
+    let html = document.getElementsByTagName('html')[0]
+    html.setAttribute('style', 'scroll-behavior: unset')
   }
 }
 </script>
