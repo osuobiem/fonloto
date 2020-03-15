@@ -17,6 +17,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "bcrypt": "^4.0.0",
     "body-parser": "^1.19.0",

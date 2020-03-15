@@ -3,7 +3,11 @@
   <div class="contact" id="contact-us">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-10 col-md-12">
+        <div
+          class="col-xl-10 col-lg-10 col-md-12"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
           <div class="contact-form">
             <h2>Get In Touch</h2>
             <p>

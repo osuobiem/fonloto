@@ -29,7 +29,8 @@ module.exports = {
       { src: '/js/owl.carousel.min.js' },
       { src: '/js/main.js' },
       { src: '/js/custom/index.js' },
-      { src: '/js/slick.js' }
+      { src: '/js/slick.js' },
+      { src: '/js/aos.js' }
     ],
 
     bodyAttrs: {

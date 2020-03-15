@@ -1,6 +1,6 @@
 <template>
   <!-- lottery ticket begin -->
-  <div class="lottery-ticket master" id="lottery-ticket" :style="tweak">
+  <div class="lottery-ticket master" id="lottery-ticket" :style="tweak" data-aos="fade-up" data-aos-duration="1500">
     <div class="container">
       <div
         class="row justify-content-xl-between justify-content-lg-between justify-content-md-center"
