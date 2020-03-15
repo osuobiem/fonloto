@@ -181,8 +181,7 @@
                         </div>
                         <h2>About Us</h2>
                         <p></p>
-                        <p><strong>Fonloto</strong> is a private enterprice that provides a platform that gives users the opportunity to make money weekly through lottery draws.<br>Each week one randomly selected user wins the prize money.</p>
-                        <p>Join us today and start winning!</p>
+                         <span v-html="about_us"></span>
                         <a href="#">Sign Up</a>
                     </div>
                 </div>
@@ -209,8 +208,10 @@ export default {
   layout: 'main-lay',
   computed: {
     header() {
-      
       return this.$store.getters.home_header
+    },
+    about_us() {
+      return this.$store.getters.about_us 
     }
   }
 }
