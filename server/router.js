@@ -14,7 +14,7 @@ const FAQCat = require('./app/controllers/FAQCategory')
 const FAQ = require('./app/controllers/FAQ')
 const User = require('./app/controllers/User')
 
-AccessFilter.exempt = ['/admins/login']
+AccessFilter.exempt = ['/admins/login', '/settings']
 app.use(AccessFilter.filter)
 
 /** ADMIN ROUTES */

@@ -6,10 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-9 col-md-8">
             <div class="banner-content" style="padding: 70px 15px">
-              <h1>
-                Play Now,<br />
-                Laugh Forever!
-              </h1>
+              {{header.tagline}}
               <p>
                 Give yourself the gift of a dream.<br />Buy a ticket today and
                 stand a chance to win big.<br />
@@ -214,9 +211,10 @@ export default {
     Contact
   },
   layout: 'main-lay',
-  
-  created() {
-    this.$store.dispatch('setSite')
+  computed: {
+    header() {
+      return this.$store.getters.home_header
+    }
   }
 }
 </script>
