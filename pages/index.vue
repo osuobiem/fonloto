@@ -6,12 +6,8 @@
         <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-9 col-md-8">
             <div class="banner-content" style="padding: 70px 15px">
-              <h1>{{header.tagline}}</h1>
-              <p>
-                Give yourself the gift of a dream.<br />Buy a ticket today and
-                stand a chance to win big.<br />
-                <strong>Give us the opportunity to change your life.</strong>
-              </p>
+              <span v-html="header.tagline"></span>
+              <span v-html="header.intro"></span>
               <a href="#" class="banner-button">Play Now</a>
             </div>
           </div>
