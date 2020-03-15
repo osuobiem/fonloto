@@ -1,44 +1,56 @@
 export default {
   state: {
-    home_header: {},
-    about_us: ''
+    site: {
+      home_header: {},
+      about_us: ''
+    }
   },
 
   getters: {
-    home_header: state => state.home_header,
-    about_us: state => state.about_us
+    home_header: state => state.site.home_header,
+    about_us: state => state.site.about_us
   },
 
   mutations: {
     SET_SITE(state, data) {
-      state = data
+      state.site = data
     }
   },
 
   actions: {
-    nuxtInitConfig: {
+    nuxtServerInit: {
       root: true,
-      handler: () => {
-        console.log('Yay')
+      handler: context => {
+        return new Promise((resolve, reject) => {
+          context
+            .dispatch('setSite')
+            .then(data => {
+              context.commit('SET_SITE', data)
+              resolve()
+            })
+            .catch(err => {
+              console.log(err)
+              reject(err)
+            })
+        })
       }
     },
-    setSite(context) {
+    async setSite(context) {
       let site_data = {}
 
-      this.$axios.get(process.env.BASE_URL + '/api/settings').then(data => {
-        let site = data.data.data
-        for (let i in site) {
-          if (site[i].name == 'home_header') {
-            let value = JSON.parse(site[i].value)
-            site_data.home_header = value
-          }
-          if (site[i].name == 'about_us') {
-            site_data.about_us = site[i].value
-          }
+      let site = await this.$axios.get(process.env.BASE_URL + '/api/settings')
+      site = site.data.data
+      for (let i in site) {
+        if (site[i].name == 'home_header') {
+          let value = JSON.parse(site[i].value)
+          site_data.home_header = value
         }
+        if (site[i].name == 'about_us') {
+          site_data.about_us = site[i].value
+        }
+      }
 
-        context.commit('SET_SITE', site_data)
-      })
+      return site_data
     }
   }
 }
