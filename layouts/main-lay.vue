@@ -2,9 +2,14 @@
   <div>
     <!-- <Preloader /> -->
     <AppHeader />
-
-    <nuxt />
-
+    <transition
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+      mode="out-in"
+      duration="500"
+    >
+      <nuxt />
+    </transition>
     <AppFooter :links="links" />
     <Copyright />
     <MobileNav />

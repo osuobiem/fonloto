@@ -3,7 +3,13 @@
     <Banner :page="page" :detail="detail" />
 
     <!-- choosing reason begin -->
-    <div class="choosing-reason" id="about-us" style="margin: 10px 0;">
+    <div
+      class="choosing-reason"
+      id="about-us"
+      style="margin: 10px 0;"
+      data-aos="fade-up"
+      data-aos-duration="500"
+    >
       <div class="container">
         <div
           class="row justify-content-xl-around justify-content-lg-around justify-content-start"

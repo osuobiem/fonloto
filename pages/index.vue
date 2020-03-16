@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <!-- banner begin -->
-    <div class="banner" data-aos="fade-up" data-aos-duration="1500">
+    <div class="banner" data-aos="fade-up" data-aos-duration="500">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-9 col-md-8">
