@@ -52,4 +52,5 @@ export default {
 @import url('~/assets/css/responsive.css');
 @import url('~/assets/css/jquery-jvectormap-2.0.3.css');
 @import url('~/assets/css/simple-scrollbar.css');
+@import url('~/assets/css/aos.css');
 </style>

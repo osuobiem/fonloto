@@ -8,7 +8,7 @@
       id="about-us"
       style="margin: 10px 0;"
       data-aos="fade-up"
-      data-aos-duration="500"
+      data-aos-duration="700"
     >
       <div class="container">
         <div
