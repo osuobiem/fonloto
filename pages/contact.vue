@@ -20,6 +20,9 @@ export default {
     Contact,
     Banner
   },
-  layout: 'alt-lay'
+  layout: 'alt-lay',
+  mounted() {
+    AOS.init()
+  }
 }
 </script>

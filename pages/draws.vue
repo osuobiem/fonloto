@@ -26,6 +26,9 @@ export default {
     UpcomingDraws,
     LatestWinners
   },
-  layout: 'blue-lay'
+  layout: 'blue-lay',
+  mounted() {
+    AOS.init()
+  }
 }
 </script>

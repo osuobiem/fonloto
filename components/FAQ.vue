@@ -2,7 +2,7 @@
   <div>
     
     <!-- faq begin -->
-        <div class="faq" data-aos="fade-up" data-aos-duration="700">
+        <div data-aos="fade-up" data-aos-duration="700" class="faq">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-xl-3 col-lg-3">

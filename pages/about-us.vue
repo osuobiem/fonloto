@@ -106,6 +106,9 @@ export default {
   components: {
     Banner
   },
-  layout: 'alt-lay'
+  layout: 'alt-lay',
+  mounted() {
+    AOS.init()
+  }
 }
 </script>

@@ -284,18 +284,18 @@
     }
 
     // language selection menu
-    $('#demo').flagStrap({
-      countries: {
-        AU: 'Aus',
-        BD: 'Ban',
-        US: 'Eng'
-      },
-      buttonSize: '',
-      buttonType: '',
-      labelMargin: '10px',
-      scrollable: false,
-      scrollableHeight: '350px'
-    })
+    // $('#demo').flagStrap({
+    //   countries: {
+    //     AU: 'Aus',
+    //     BD: 'Ban',
+    //     US: 'Eng'
+    //   },
+    //   buttonSize: '',
+    //   buttonType: '',
+    //   labelMargin: '10px',
+    //   scrollable: false,
+    //   scrollableHeight: '350px'
+    // })
 
     // testimonial slider
     var testimonialSlider = $('.testimonial-slider')

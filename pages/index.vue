@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <!-- banner begin -->
-    <div class="banner" data-aos="fade-up" data-aos-duration="700">
+    <div class="banner" data-aos="fade" data-aos-duration="700">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-6 col-lg-9 col-md-8">
@@ -50,7 +50,7 @@
     <!-- draw end -->
 
     <!-- how to works begin -->
-    <div class="how-to-works" data-aos="fade-up" data-aos-duration="1500" id="how-it-works">
+    <div class="how-to-works" data-aos="fade-up" data-aos-duration="700" id="how-it-works">
       <div class="container">
         <div class="row">
           <div class="col-xl-5 col-lg-4">
@@ -126,7 +126,7 @@
     <!-- how to works end -->
 
     <!-- choosing reason begin -->
-    <div class="choosing-reason" id="about-us" data-aos="fade-up" data-aos-duration="1500">
+    <div class="choosing-reason" id="about-us" data-aos="fade-up" data-aos-duration="700">
         <div class="container">
             <div class="row justify-content-xl-around justify-content-lg-around justify-content-start">
                 <div class="col-xl-5 col-lg-5">
@@ -217,10 +217,6 @@ export default {
   mounted() {
     let html = document.getElementsByTagName('html')[0]
     html.setAttribute('style', 'scroll-behavior: smooth')
-  },
-  beforeDestroy() {
-    let html = document.getElementsByTagName('html')[0]
-    html.setAttribute('style', 'scroll-behavior: unset')
   }
 }
 </script>

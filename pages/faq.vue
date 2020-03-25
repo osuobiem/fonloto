@@ -21,6 +21,9 @@ export default {
     Banner,
     FAQ
   },
-  layout: 'alt-lay'
+  layout: 'alt-lay',
+  mounted() {
+    AOS.init()
+  }
 }
 </script>
