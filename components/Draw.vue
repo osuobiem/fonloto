@@ -49,8 +49,8 @@
               </strong>
             </p>
             <strong>
-              The draw will start
-              {{ day + ' ' + lMonth + ',' }} 2020 by {{ time }}
+              The draw will begin
+              {{ lMonth + ' ' + day + ',' }} 2020 by {{ time }}
             </strong>
             <div class="date-counter timer" :data-date="active.will_begin">
               <div class="single-counter">
