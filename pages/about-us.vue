@@ -76,14 +76,7 @@
               </div>
               <h2>About Us</h2>
               <p></p>
-              <p>
-                <strong>Fonloto</strong> is a private enterprice that provides a
-                platform that gives users the opportunity to make money weekly
-                through lottery draws.<br />Each week one randomly selected user
-                wins the prize money.
-              </p>
-              <p>Join us today and start winning!</p>
-              <a href="#">Sign Up</a>
+              <span v-html="about_us"></span>
             </div>
           </div>
         </div>
@@ -109,6 +102,11 @@ export default {
   layout: 'alt-lay',
   mounted() {
     AOS.init()
+  },
+  computed: {
+    about_us() {
+      return this.$store.getters.about_us
+    }
   }
 }
 </script>

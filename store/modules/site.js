@@ -35,7 +35,7 @@ export default {
         })
       }
     },
-    async setSite(context) {
+    async setSite() {
       let site_data = {}
 
       let site = await this.$axios.get(process.env.BASE_URL + '/api/settings')

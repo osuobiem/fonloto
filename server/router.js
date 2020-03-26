@@ -14,7 +14,7 @@ const FAQCat = require('./app/controllers/FAQCategory')
 const FAQ = require('./app/controllers/FAQ')
 const User = require('./app/controllers/User')
 
-AccessFilter.exempt = ['/admins/login', '/settings']
+AccessFilter.exempt = ['/admins/login', '/settings', '/draws/get-one']
 app.use(AccessFilter.filter)
 
 /** ADMIN ROUTES */
@@ -135,6 +135,18 @@ app.use(AccessFilter.filter)
   // Get One
   app.get('/draws/:id', (req, res) => {
     Draw.get({ id: parseInt(req.params.id) })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+
+  // Get One with criteria
+  app.post('/draws/get-one', (req, res) => {
+    console.log(req.body)
+    Draw.get(req.body)
       .then(data => {
         res.send(report.success(data[0]))
       })
