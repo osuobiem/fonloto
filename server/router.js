@@ -145,7 +145,7 @@ app.use(AccessFilter.filter)
 
   // Get One with criteria
   app.post('/draws/get-one', (req, res) => {
-    console.log(req.body)
+    validate.empty(req.body)
     Draw.get(req.body)
       .then(data => {
         res.send(report.success(data[0]))
