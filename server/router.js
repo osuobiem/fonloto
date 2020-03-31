@@ -13,6 +13,7 @@ const Winner = require('./app/controllers/Winner')
 const FAQCat = require('./app/controllers/FAQCategory')
 const FAQ = require('./app/controllers/FAQ')
 const User = require('./app/controllers/User')
+const Country = require('./app/controllers/Country')
 
 AccessFilter.exempt = ['/admins/login', '/settings', '/draws/get-one']
 app.use(AccessFilter.filter)
@@ -586,6 +587,22 @@ app.use(AccessFilter.filter)
   })
 }
 /** END USER ROUTES */
+
+/** COUNTRY ROUTES */
+{
+
+  // Get One using a criteria
+  app.get('/country/:currency', (req, res) => {
+    Country.get({ currency: req.params.currency })
+      .then(data => {
+        res.send(report.success(data[0]))
+      })
+      .catch(err => {
+        res.send(report.failure('Could not fetch data', err))
+      })
+  })
+}
+/** END FAQ ROUTES */
 
 module.exports = {
   path: '/api',
