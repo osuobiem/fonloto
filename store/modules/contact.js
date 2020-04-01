@@ -3,9 +3,11 @@ export default {
     saveContact(context, data) {
       return new Promise((resolve, reject) => {
         this.$axios
-          .post(process.env.BASE_URL + '/api/contacts/new', data)
+          .post(process.env.BASE_URL + '/api/contacts/new', data.data)
           .then(res => {
-            resolve({ status: true, message: 'Message Sent Successfully!' })
+            res.data.status
+              ? resolve({ status: true, message: 'Message Sent Successfully!' })
+              : reject({ status: false, message: res.data.message })
           })
           .catch(err => {
             console.log(err)
