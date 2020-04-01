@@ -1,6 +1,11 @@
 <template>
   <!-- contact begin -->
-  <div class="contact" id="contact-us">
+  <div
+    class="contact"
+    id="contact-us"
+    data-aos="fade-up"
+    data-aos-duration="1500"
+  >
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-10 col-md-12">
@@ -151,6 +156,7 @@ export default {
       if (typeof message == 'string') {
         $('#conerr').html(message)
         $('#conerr').removeClass('d-none')
+        $('#conerr').addClass('animated bounceInUp')
 
         setTimeout(() => {
           $('#conerr').addClass('d-none')
@@ -174,6 +180,7 @@ export default {
     sent(message) {
       $('#consuc').html(message)
       $('#consuc').removeClass('d-none')
+      $('#consuc').addClass('animated fadeInDown')
 
       setTimeout(() => {
         $('#consuc').addClass('d-none')
