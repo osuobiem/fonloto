@@ -1,4 +1,5 @@
 const app = require('express')()
+const requestIp = require('request-ip')
 
 const report = require('./app/libs/report')
 const validate = require('./app/libs/validate')
@@ -15,7 +16,12 @@ const FAQ = require('./app/controllers/FAQ')
 const User = require('./app/controllers/User')
 const Country = require('./app/controllers/Country')
 
-AccessFilter.exempt = ['/admins/login', '/settings', '/draws/get-one']
+AccessFilter.exempt = [
+  '/admins/login',
+  '/settings',
+  '/draws/get-one',
+  '/country/req-ip'
+]
 app.use(AccessFilter.filter)
 
 /** ADMIN ROUTES */
@@ -590,10 +596,10 @@ app.use(AccessFilter.filter)
 
 /** COUNTRY ROUTES */
 {
-
-  // Get One using a criteria
-  app.get('/country/:currency', (req, res) => {
-    Country.get({ currency: req.params.currency })
+  // Get One using a request IP
+  app.get('/country/req-ip', (req, res) => {
+    let clientIp = requestIp.getClientIp(req)
+    Country.getByIP(clientIp)
       .then(data => {
         res.send(report.success(data[0]))
       })

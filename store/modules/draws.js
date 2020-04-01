@@ -3,7 +3,8 @@ export default {
 
   state: {
     draws: [],
-    active: {}
+    active: {},
+    country: {}
   },
 
   getters: {
@@ -14,6 +15,10 @@ export default {
   mutations: {
     SET_ACTIVE_DRAW(state, data) {
       state.active = data
+    },
+
+    SET_COUNTRY(state, data) {
+      state.country = data
     }
   },
 
@@ -23,10 +28,20 @@ export default {
       handler: context => {
         return new Promise((resolve, reject) => {
           context
-            .dispatch('setActiveDraw')
+            .dispatch('setIPCountry')
             .then(data => {
-              context.commit('SET_ACTIVE_DRAW', data)
-              resolve()
+              context.commit('SET_COUNTRY', data)
+
+              context
+                .dispatch('setActiveDraw')
+                .then(data => {
+                  context.commit('SET_ACTIVE_DRAW', data)
+                  resolve()
+                })
+                .catch(err => {
+                  console.log(err)
+                  reject(err)
+                })
             })
             .catch(err => {
               console.log(err)
@@ -36,13 +51,28 @@ export default {
       }
     },
 
-    async setActiveDraw() {
+    async setActiveDraw(state) {
+      let id = state.state.country ? state.state.country.id : 124
       let draw = await this.$axios.post(
         process.env.BASE_URL + '/api/draws/get-one',
-        { active: 1 }
+        {
+          active: 1,
+          $and: {
+            country: id
+          }
+        }
       )
+
       draw = draw.data.data
       return draw
+    },
+
+    async setIPCountry(state) {
+      let country = await this.$axios.get(
+        process.env.BASE_URL + '/api/country/req-ip'
+      )
+
+      return country.data.data
     }
   }
 }
