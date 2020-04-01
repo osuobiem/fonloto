@@ -17,12 +17,12 @@ module.exports = {
             })
             .catch(er => {
               console.log(er)
-              reject('Opps! Could not create contact')
+              reject('Opps! Something went wrong. Try Again!')
             })
         })
         .catch(err => {
           console.log(err)
-          reject('Opps! Could not create contact')
+          reject('Opps! Something went wrong. Try Again!')
         })
     })
   },
