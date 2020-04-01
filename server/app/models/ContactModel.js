@@ -7,7 +7,6 @@ class ContactModel extends Model {
     id: '',
     name: '',
     email: '',
-    phone: '',
     subject: '',
     message: ''
   }

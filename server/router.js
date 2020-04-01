@@ -20,7 +20,8 @@ AccessFilter.exempt = [
   '/admins/login',
   '/settings',
   '/draws/get-one',
-  '/country/req-ip'
+  '/country/req-ip',
+  '/contacts/new'
 ]
 app.use(AccessFilter.filter)
 

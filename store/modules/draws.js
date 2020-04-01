@@ -51,8 +51,8 @@ export default {
       }
     },
 
-    async setActiveDraw(state) {
-      let id = state.state.country ? state.state.country.id : 124
+    async setActiveDraw(context) {
+      let id = context.state.country ? context.state.country.id : 124
       let draw = await this.$axios.post(
         process.env.BASE_URL + '/api/draws/get-one',
         {
@@ -67,7 +67,7 @@ export default {
       return draw
     },
 
-    async setIPCountry(state) {
+    async setIPCountry(context) {
       let country = await this.$axios.get(
         process.env.BASE_URL + '/api/country/req-ip'
       )
