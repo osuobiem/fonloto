@@ -16,10 +16,16 @@
               @submit.prevent="sendMessage()"
             >
               <div
-                class="alert alert-danger"
+                class="alert alert-danger d-none"
                 role="alert"
                 id="conerr"
-                style="display: none"
+                style="text-align: center"
+              ></div>
+              <div
+                class="alert alert-success d-none"
+                role="alert"
+                id="consuc"
+                style="text-align: center"
               ></div>
               <div class="row">
                 <div class="col-xl-6 col-lg-6">
@@ -121,7 +127,7 @@ export default {
         })
         .then(res => {
           this.load(false)
-          console.log(res)
+          this.sent(res.message)
         })
         .catch(err => {
           this.load(false)
@@ -144,7 +150,11 @@ export default {
     error(message) {
       if (typeof message == 'string') {
         $('#conerr').html(message)
-        $('#conerr').attr('style', 'text-align: center')
+        $('#conerr').removeClass('d-none')
+
+        setTimeout(() => {
+          $('#conerr').addClass('d-none')
+        }, 4000)
       } else {
         for (let err in message) {
           if (message[err].length > 1) {
@@ -160,6 +170,14 @@ export default {
     },
     removeErr(el) {
       $('#' + el + 'err').addClass('d-none')
+    },
+    sent(message) {
+      $('#consuc').html(message)
+      $('#consuc').removeClass('d-none')
+
+      setTimeout(() => {
+        $('#consuc').addClass('d-none')
+      }, 3000)
     }
   }
 }
