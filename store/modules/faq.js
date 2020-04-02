@@ -5,7 +5,7 @@ export default {
   },
 
   getters: {
-    faq: (state, id) => state.draws[id]
+    cats: state => state.categories
   },
 
   mutations: {
@@ -61,7 +61,7 @@ export default {
       return faqs
     },
     async getCategories() {
-      let cats = await this.$axios.get(process.env.BASE_URL + '/faq-cats')
+      let cats = await this.$axios.get(process.env.BASE_URL + '/api/faq-cats')
       cats = cats.data.data
 
       return cats

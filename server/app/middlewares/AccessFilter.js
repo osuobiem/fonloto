@@ -4,8 +4,20 @@ let AF = {
   exempt: [],
 
   filter(req, res, next) {
+    split(req)
     clean(req, res, next)
   }
+}
+
+function split(req) {
+  let parts = []
+
+  AF.exempt.forEach((el, i) => {
+    parts = el.split(':')
+    if (parts.length > 1) {
+      AF.exempt[i] = req.path
+    }
+  })
 }
 
 function clean(req, res, next) {
@@ -35,13 +47,14 @@ function inArray(haystack, needle) {
 function verify(req, res, next) {
   if (req.headers.token) {
     jwt.verify(req.headers.token, err => {
-      if (err)
+      if (err) {
         res.send({
           status: false,
           message: 'Access denied'
         })
-
-      next()
+      } else {
+        next()
+      }
     })
   } else {
     res.send({

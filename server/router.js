@@ -21,7 +21,9 @@ AccessFilter.exempt = [
   '/settings',
   '/draws/get-one',
   '/country/req-ip',
-  '/contacts/new'
+  '/contacts/new',
+  '/faq-cats',
+  '/faqs/category/:category'
 ]
 app.use(AccessFilter.filter)
 
@@ -609,7 +611,7 @@ app.use(AccessFilter.filter)
       })
   })
 }
-/** END FAQ ROUTES */
+/** END COUNTRY ROUTES */
 
 module.exports = {
   path: '/api',
