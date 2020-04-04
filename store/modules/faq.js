@@ -5,7 +5,8 @@ export default {
   },
 
   getters: {
-    cats: state => state.categories
+    cats: state => state.categories,
+    faqs: state => state.faqs
   },
 
   mutations: {
@@ -39,11 +40,13 @@ export default {
               context
                 .dispatch('getFaqs', id)
                 .then(data => {
-                  let f_data = {
-                    cat_id: id,
-                    faqs: data
+                  if (data) {
+                    let f_data = {
+                      cat_id: id,
+                      faqs: data
+                    }
+                    context.commit('SET_FAQS', f_data)
                   }
-                  context.commit('SET_FAQS', f_data)
                 })
                 .catch(err => {
                   console.log(err)

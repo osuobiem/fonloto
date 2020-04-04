@@ -41,17 +41,16 @@
                   role="tabpanel"
                   :aria-labelledby="'v-pills-' + id + '-tab'"
                 >
-                  <div class="single-faq">
+                  <div
+                    class="single-faq"
+                    v-for="(faq, id) in allFaqs(cat.id)"
+                    :key="id"
+                  >
                     <h4>
-                      Can I participate in a national lottery of a foreign
-                      country?
+                      {{ faq.question }}
                     </h4>
                     <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page whene at
-                      layout. The point of using Lorem Ipsum is that it has a
-                      more-or-less normal distribution of letters too using
-                      eader will be distracted by the readable conten.
+                      {{ faq.answer }}
                     </p>
                   </div>
                 </div>
@@ -66,27 +65,33 @@
 </template>
 
 <script>
-// import SearchWidget from '@/components/SearchWidget';
-
 export default {
-  //   components: {
-  //     SearchWidget
-  //   }
+  data() {
+    return {
+      faqs: {}
+    }
+  },
+
   computed: {
     cats() {
       return this.$store.getters.cats
     }
   },
+
   methods: {
     active(id) {
       return id == 0 ? 'nav-link active' : 'nav-link'
     },
     activeCon(id) {
       return id == 0 ? 'tab-pane fade show active' : 'tab-pane fade'
+    },
+    allFaqs(i) {
+      return this.faqs[i]
     }
   },
   mounted() {
     this.$store.dispatch('getCategories')
+    this.faqs = this.$store.getters.faqs
   }
 }
 </script>
