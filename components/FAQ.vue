@@ -84,6 +84,9 @@ export default {
     activeCon(id) {
       return id == 0 ? 'tab-pane fade show active' : 'tab-pane fade'
     }
+  },
+  mounted() {
+    this.$store.dispatch('getCategories')
   }
 }
 </script>

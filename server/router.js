@@ -23,7 +23,7 @@ AccessFilter.exempt = [
   '/country/req-ip',
   '/contacts/new',
   '/faq-cats',
-  '/faqs/category/:category'
+  '/faqs/category/:1'
 ]
 app.use(AccessFilter.filter)
 

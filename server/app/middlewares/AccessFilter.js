@@ -11,11 +11,21 @@ let AF = {
 
 function split(req) {
   let parts = []
+  let num = 0
+  let url_ar = []
 
   AF.exempt.forEach((el, i) => {
     parts = el.split(':')
+    url_ar = req.path.split('/')
+
     if (parts.length > 1) {
-      AF.exempt[i] = req.path
+      num = parts[1]
+      for (let k = 0; k < num; k++) {
+        url_ar.pop()
+      }
+
+      AF.exempt[i] =
+        AF.exempt[i] == url_ar.join('/') + '/:' + num ? req.path : AF.exempt[i]
     }
   })
 }
