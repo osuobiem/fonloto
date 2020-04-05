@@ -41,6 +41,9 @@ export default {
     MobileNav,
     Copyright,
     AppFooter
+  },
+  mounted() {
+    AOS.init()
   }
 }
 </script>
@@ -53,4 +56,13 @@ export default {
 @import url('~/assets/css/jquery-jvectormap-2.0.3.css');
 @import url('~/assets/css/simple-scrollbar.css');
 @import url('~/assets/css/aos.css');
+
+.field-err {
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  background: #b71212;
+  border-radius: 4px;
+  padding: 2px;
+}
 </style>
